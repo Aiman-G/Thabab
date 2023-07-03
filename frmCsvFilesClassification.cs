@@ -78,7 +78,7 @@ namespace Thabab
             foreach (var group in classifiedFiles)
             {
                 System.Windows.Forms.ListView listView = new System.Windows.Forms.ListView();
-                listView.View = View.SmallIcon;
+                listView.View = View.Tile;
                 listView.Width = 273;
                 listView.Height = 200;
                 //listView.Columns.Add("File Name");

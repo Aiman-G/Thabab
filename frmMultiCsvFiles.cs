@@ -99,18 +99,23 @@ namespace Thabab
         {
             this.Width = 1254;
             this.Height = 777;
-            helpProvider1.SetHelpString(btnFilterByCatCols, "Filter the files according to categorical variables values on the left ");
-            helpProvider1.SetHelpString(btnUniqueColumnNames, "Get the unique column names accross all the files ");
-            helpProvider1.SetHelpString(btnFilterFileNames, "Get the fiels that contain the chosen columns ");
-            helpProvider1.SetHelpString(btnDistinctValuesAcrossFiles, "Get the unique values of categrorical varaialbes accross all the files ");
-            helpProvider1.SetHelpString(lsvFileNames, "Double click on the files name to show its content");
-            helpProvider1.SetHelpString(lsvFilterdByCatCols, "Double click on the file name to show its content");
+            helpProvider1.SetHelpString(btnFilterByCatCols, "Filter the files according to categorical variables values on the left. ");
+            helpProvider1.SetHelpString(btnUniqueColumnNames, "Get the unique column names accross all the files. ");
+            helpProvider1.SetHelpString(btnFilterFileNames, "Get the fiels that contain the chosen columns .");
+            helpProvider1.SetHelpString(btnDistinctValuesAcrossFiles, "Get the unique values of categrorical varaialbes accross all the files," +
+                "Note, if a column name is too big to be fully shown, hover the mouse over the column name to see a tip that shows the full name." +
+                "Perfectionism!");
+            helpProvider1.SetHelpString(lsvFileNames, "Double click on the files name to show its content.");
+            helpProvider1.SetHelpString(lsvFilterdByCatCols, "Double click on the file name to show its content.");
             helpProvider1.SetHelpString(btnClassifyCsvFiles, "This will take you to a new window, " +
                 "where you can get the files with common column names/numbers grouped, so that you can combine similar files." +
-                " The files that will get grouped are in the below list");
-            helpProvider1.SetHelpString(pictureBoxHome, "Show the main window");
+                " The files that will get grouped are in the below list.");
+            helpProvider1.SetHelpString(pictureBoxHome, "Show the main window.");
 
-            helpProvider1.SetHelpString(btnResetFiltering, "Retrieve the orginal items before filtering");
+            helpProvider1.SetHelpString(btnResetFiltering, "Retrieve the orginal items before filtering.");
+            
+                
+
 
 
             // set the number of files label to 0;
@@ -360,6 +365,10 @@ namespace Thabab
                 label.AutoSize = true;
                 label.Left = 10;
                 label.Top = labelTop;
+                // set the tool tip to show the column name if the column name is too big to be shown fully, when the user hover, will see full name
+                toolTip1.SetToolTip(label, label.Text);
+
+
                 panelColDistmictValues.Controls.Add(label);
 
                 // Create a combobox containing the distinct values

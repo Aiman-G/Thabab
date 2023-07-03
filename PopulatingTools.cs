@@ -20,7 +20,8 @@ namespace Thabab
         // adding comboxes with unique values of datagridview to a panel
 
         public void comboxOfUniquevalues(DataGridView dgv, Panel pnl, BackgroundWorker bkgw)
-        {
+        {  // some times the column names are big, and the labels cannot show the full name, so the name can be shown as a tooltip
+            ToolTip tltip = new ToolTip();
 
             try
             {
@@ -34,7 +35,8 @@ namespace Thabab
                     label.Top = i * 30;
                     label.Left = 10;
                     label.Width = 100;
-
+                    // set the tooltip text to the label text
+                    tltip.SetToolTip(label, label.Text);
 
                     // Update the UI on the main thread
                     pnl.Invoke((MethodInvoker)delegate

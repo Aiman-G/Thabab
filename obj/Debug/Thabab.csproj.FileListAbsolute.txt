@@ -109,3 +109,6 @@ D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.exe
 D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.pdb
 D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmMultiCsvFiles.resources
 D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCsvFilesClassification.resources
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll

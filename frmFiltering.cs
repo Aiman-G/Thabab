@@ -181,6 +181,9 @@ namespace Thabab
 
             // Start the background worker
             backgroundWorker1.RunWorkerAsync();
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMultiCsvFiles));
             this.btnMultiCsvUpload = new System.Windows.Forms.Button();
             this.lsvFileNames = new System.Windows.Forms.ListView();
@@ -38,6 +39,7 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnFilterFileNames = new System.Windows.Forms.Button();
             this.groupBoxColDistmictValues = new System.Windows.Forms.GroupBox();
+            this.btnResetFiltering = new System.Windows.Forms.Button();
             this.lblFileNumberOfCatcols = new System.Windows.Forms.Label();
             this.progressBarCatCols = new System.Windows.Forms.ProgressBar();
             this.lsvFilterdByCatCols = new System.Windows.Forms.ListView();
@@ -51,7 +53,7 @@
             this.lblNoOfRecords = new System.Windows.Forms.Label();
             this.pictureBoxHome = new System.Windows.Forms.PictureBox();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.btnResetFiltering = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowSelected)).BeginInit();
             this.groupBoxColDistmictValues.SuspendLayout();
             this.panelColDistmictValues.SuspendLayout();
@@ -77,7 +79,7 @@
             this.lsvFileNames.Size = new System.Drawing.Size(273, 327);
             this.lsvFileNames.TabIndex = 3;
             this.lsvFileNames.UseCompatibleStateImageBehavior = false;
-            this.lsvFileNames.View = System.Windows.Forms.View.SmallIcon;
+            this.lsvFileNames.View = System.Windows.Forms.View.Tile;
             this.lsvFileNames.SelectedIndexChanged += new System.EventHandler(this.lsvFileNames_SelectedIndexChanged);
             this.lsvFileNames.DoubleClick += new System.EventHandler(this.lsvFileNames_DoubleClick);
             // 
@@ -154,6 +156,16 @@
             this.groupBoxColDistmictValues.TabStop = false;
             this.groupBoxColDistmictValues.Text = "Distnict Values of Categorical Vairables Across Files";
             // 
+            // btnResetFiltering
+            // 
+            this.btnResetFiltering.Location = new System.Drawing.Point(461, 256);
+            this.btnResetFiltering.Name = "btnResetFiltering";
+            this.btnResetFiltering.Size = new System.Drawing.Size(92, 36);
+            this.btnResetFiltering.TabIndex = 16;
+            this.btnResetFiltering.Text = "Reset >>";
+            this.btnResetFiltering.UseVisualStyleBackColor = true;
+            this.btnResetFiltering.Click += new System.EventHandler(this.btnResetFiltering_Click);
+            // 
             // lblFileNumberOfCatcols
             // 
             this.lblFileNumberOfCatcols.AutoSize = true;
@@ -179,7 +191,7 @@
             this.lsvFilterdByCatCols.Size = new System.Drawing.Size(299, 346);
             this.lsvFilterdByCatCols.TabIndex = 13;
             this.lsvFilterdByCatCols.UseCompatibleStateImageBehavior = false;
-            this.lsvFilterdByCatCols.View = System.Windows.Forms.View.SmallIcon;
+            this.lsvFilterdByCatCols.View = System.Windows.Forms.View.Tile;
             this.lsvFilterdByCatCols.DoubleClick += new System.EventHandler(this.lsvFilterdByCatCols_DoubleClick);
             // 
             // btnFilterByCatCols
@@ -286,16 +298,6 @@
             this.pictureBoxHome.TabStop = false;
             this.pictureBoxHome.Click += new System.EventHandler(this.pictureBoxHome_Click);
             // 
-            // btnResetFiltering
-            // 
-            this.btnResetFiltering.Location = new System.Drawing.Point(461, 256);
-            this.btnResetFiltering.Name = "btnResetFiltering";
-            this.btnResetFiltering.Size = new System.Drawing.Size(92, 36);
-            this.btnResetFiltering.TabIndex = 16;
-            this.btnResetFiltering.Text = "Reset >>";
-            this.btnResetFiltering.UseVisualStyleBackColor = true;
-            this.btnResetFiltering.Click += new System.EventHandler(this.btnResetFiltering_Click);
-            // 
             // frmMultiCsvFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -354,5 +356,6 @@
         private System.Windows.Forms.PictureBox pictureBoxHome;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Button btnResetFiltering;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
