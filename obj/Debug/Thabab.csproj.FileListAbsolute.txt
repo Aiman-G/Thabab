@@ -1,0 +1,111 @@
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\luminous.AboutBox1.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\luminous.Form1.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\luminous.frmCategPlots.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\luminous.frmCombinationPlots.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\Thabab.Properties.Resources.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\Thabab.csproj.GenerateResource.cache
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\Thabab.csproj.CoreCompileInputs.cache
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\Thabab.exe.config
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\Thabab.exe.manifest
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\Thabab.application
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\Thabab.exe
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\Thabab.pdb
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\MathNet.Numerics.dll
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\OxyPlot.dll
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\OxyPlot.WindowsForms.dll
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\System.ValueTuple.dll
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\MathNet.Numerics.xml
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\OxyPlot.xml
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\OxyPlot.WindowsForms.xml
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\bin\Debug\System.ValueTuple.xml
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\Thabab.exe.manifest
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\Thabab.application
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\Thabab.csproj.CopyComplete
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\Thabab.exe
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\luminous\luminous\obj\Debug\Thabab.pdb
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.exe.config
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.exe.manifest
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.application
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.exe
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.pdb
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\MathNet.Numerics.dll
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\OxyPlot.dll
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\OxyPlot.WindowsForms.dll
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\System.ValueTuple.dll
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\MathNet.Numerics.xml
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\OxyPlot.xml
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\OxyPlot.WindowsForms.xml
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\bin\Debug\System.ValueTuple.xml
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\luminous.AboutBox1.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.Properties.Resources.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.GenerateResource.cache
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.CoreCompileInputs.cache
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.exe.manifest
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.application
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.CopyComplete
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.exe
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.pdb
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmReport.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.Form1.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCategPlots.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCmbPlots.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCombinationPlots.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csprojAssemblyReference.cache
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmFiltering.resources
+D:\Eindhoven Technological university - presentation\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmNormalize.resources
+E:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.exe.config
+E:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.exe.manifest
+E:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.application
+E:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.exe
+E:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.pdb
+E:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\MathNet.Numerics.xml
+E:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\OxyPlot.xml
+E:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\OxyPlot.WindowsForms.xml
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.AssemblyReference.cache
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.SuggestedBindingRedirects.cache
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\luminous.AboutBox1.resources
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.Form1.resources
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCategPlots.resources
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCmbPlots.resources
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCombinationPlots.resources
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmFiltering.resources
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmFloatingPoint.resources
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmNormalize.resources
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmReport.resources
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.Properties.Resources.resources
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.GenerateResource.cache
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.CoreCompileInputs.cache
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.exe.manifest
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.application
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.CopyComplete
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.exe
+E:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.pdb
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.exe.config
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.exe.manifest
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.application
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.exe
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Thabab.pdb
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\MathNet.Numerics.xml
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\OxyPlot.xml
+D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\OxyPlot.WindowsForms.xml
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.AssemblyReference.cache
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.SuggestedBindingRedirects.cache
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\luminous.AboutBox1.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.Form1.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCategPlots.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCmbPlots.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCombinationPlots.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmFiltering.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmFloatingPoint.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmNormalize.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmReport.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.Properties.Resources.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.GenerateResource.cache
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.CoreCompileInputs.cache
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.exe.manifest
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.application
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.csproj.CopyComplete
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.exe
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.pdb
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmMultiCsvFiles.resources
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCsvFilesClassification.resources
