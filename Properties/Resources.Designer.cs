@@ -103,6 +103,16 @@ namespace Thabab.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ManyCSVs {
+            get {
+                object obj = ResourceManager.GetObject("ManyCSVs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Normalization_icon {
             get {
                 object obj = ResourceManager.GetObject("Normalization_icon", resourceCulture);

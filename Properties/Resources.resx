@@ -145,6 +145,9 @@
   <data name="PlotIcon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlotIcon2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FloatingPointIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FloatingPointIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LoadCSV" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoadCSV.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,7 +163,7 @@
   <data name="Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FloatingPointIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FloatingPointIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ManyCSVs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ManyCSVs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
