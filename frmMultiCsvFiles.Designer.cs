@@ -54,6 +54,7 @@
             this.pictureBoxHome = new System.Windows.Forms.PictureBox();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.btnExportToMain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowSelected)).BeginInit();
             this.groupBoxColDistmictValues.SuspendLayout();
             this.panelColDistmictValues.SuspendLayout();
@@ -158,7 +159,7 @@
             // 
             // btnResetFiltering
             // 
-            this.btnResetFiltering.Location = new System.Drawing.Point(461, 256);
+            this.btnResetFiltering.Location = new System.Drawing.Point(478, 238);
             this.btnResetFiltering.Name = "btnResetFiltering";
             this.btnResetFiltering.Size = new System.Drawing.Size(92, 36);
             this.btnResetFiltering.TabIndex = 16;
@@ -196,7 +197,7 @@
             // 
             // btnFilterByCatCols
             // 
-            this.btnFilterByCatCols.Location = new System.Drawing.Point(461, 150);
+            this.btnFilterByCatCols.Location = new System.Drawing.Point(478, 88);
             this.btnFilterByCatCols.Name = "btnFilterByCatCols";
             this.btnFilterByCatCols.Size = new System.Drawing.Size(87, 41);
             this.btnFilterByCatCols.TabIndex = 12;
@@ -269,7 +270,7 @@
             // 
             // btnDistinctValuesAcrossFiles
             // 
-            this.btnDistinctValuesAcrossFiles.Location = new System.Drawing.Point(643, 235);
+            this.btnDistinctValuesAcrossFiles.Location = new System.Drawing.Point(643, 173);
             this.btnDistinctValuesAcrossFiles.Name = "btnDistinctValuesAcrossFiles";
             this.btnDistinctValuesAcrossFiles.Size = new System.Drawing.Size(89, 55);
             this.btnDistinctValuesAcrossFiles.TabIndex = 13;
@@ -298,11 +299,26 @@
             this.pictureBoxHome.TabStop = false;
             this.pictureBoxHome.Click += new System.EventHandler(this.pictureBoxHome_Click);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.DarkOrange;
+            // 
+            // btnExportToMain
+            // 
+            this.btnExportToMain.Location = new System.Drawing.Point(1436, 841);
+            this.btnExportToMain.Name = "btnExportToMain";
+            this.btnExportToMain.Size = new System.Drawing.Size(159, 30);
+            this.btnExportToMain.TabIndex = 16;
+            this.btnExportToMain.Text = "Export to Main";
+            this.btnExportToMain.UseVisualStyleBackColor = true;
+            this.btnExportToMain.Click += new System.EventHandler(this.btnExportToMain_Click);
+            // 
             // frmMultiCsvFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1647, 904);
+            this.Controls.Add(this.btnExportToMain);
             this.Controls.Add(this.pictureBoxHome);
             this.Controls.Add(this.lblNoOfRecords);
             this.Controls.Add(this.btnDistinctValuesAcrossFiles);
@@ -357,5 +373,6 @@
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Button btnResetFiltering;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button btnExportToMain;
     }
 }

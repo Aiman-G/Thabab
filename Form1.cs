@@ -60,6 +60,12 @@ namespace Thabab
         {
             //LstBox_cat_columns.Visible = false;
             //LstBoxTimeFlux.Visible = false;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkOrange;
+            
+            // If you do not set the EnableHeadersVisualStyles flag to False,
+            // then the changes of backcolor you make to the style of the header will not take effect
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+
             this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Bisque;
             this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor =
                 Color.Beige;

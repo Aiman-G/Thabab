@@ -366,6 +366,7 @@ namespace Thabab
                 label.Left = 10;
                 label.Top = labelTop;
                 // set the tool tip to show the column name if the column name is too big to be shown fully, when the user hover, will see full name
+              
                 toolTip1.SetToolTip(label, label.Text);
 
 
@@ -505,6 +506,17 @@ namespace Thabab
 
             // Update the file numbers in the label
             lblFileNumberOfCatcols.Text = "No of Files: " + lsvFilterdByCatCols.Items.Count.ToString();
+        }
+
+        private void btnExportToMain_Click(object sender, EventArgs e)
+        {
+            if (dgvShowSelected.Rows.Count == 0) { return; }
+
+            Form1 frmMain = (Form1)Application.OpenForms["Form1"];
+            DataGridView dgvAtMainWindw = (DataGridView)frmMain.Controls["dataGridView1"];
+            dgvAtMainWindw.DataSource = dgvShowSelected.DataSource;
+            frmMain.Show();
+            frmMain.BringToFront();
         }
 
 
