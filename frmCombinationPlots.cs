@@ -36,8 +36,9 @@ namespace Thabab
 
         private void frmCombinationPlots_Load(object sender, EventArgs e)
         {
-            
-           
+            this.dgvFilteredData.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.dgvFilteredData.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+
             Form1 frmMain = (Form1)Application.OpenForms["Form1"];
             DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
 

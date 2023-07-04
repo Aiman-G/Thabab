@@ -35,6 +35,7 @@ namespace Thabab
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multipleCSVsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.plotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuPlotCategorical = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripPlotCombinations = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +66,8 @@ namespace Thabab
             this.dataGridView1.Size = new System.Drawing.Size(1249, 406);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.DataSourceChanged += new System.EventHandler(this.dataGridView1_DataSourceChanged);
-            this.dataGridView1.ColumnHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseDoubleClick);
+            this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
+            this.dataGridView1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dataGridView1_RowsRemoved);
             // 
             // menuStrip1
             // 
@@ -87,7 +89,8 @@ namespace Thabab
             this.fileToolStripMenuItem.AutoToolTip = true;
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.loadCSVToolStripMenuItem,
-            this.exportToCSVToolStripMenuItem});
+            this.exportToCSVToolStripMenuItem,
+            this.multipleCSVsToolStripMenuItem});
             this.fileToolStripMenuItem.Image = global::Thabab.Properties.Resources._3442848;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(71, 29);
@@ -98,7 +101,7 @@ namespace Thabab
             // 
             this.loadCSVToolStripMenuItem.Image = global::Thabab.Properties.Resources.LoadCSV;
             this.loadCSVToolStripMenuItem.Name = "loadCSVToolStripMenuItem";
-            this.loadCSVToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.loadCSVToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.loadCSVToolStripMenuItem.Text = "Load CSV..";
             this.loadCSVToolStripMenuItem.Click += new System.EventHandler(this.loadCSVToolStripMenuItem_Click);
             // 
@@ -106,9 +109,17 @@ namespace Thabab
             // 
             this.exportToCSVToolStripMenuItem.Image = global::Thabab.Properties.Resources.To_CSV;
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
-            this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.exportToCSVToolStripMenuItem.Text = "Export to CSV";
             this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
+            // 
+            // multipleCSVsToolStripMenuItem
+            // 
+            this.multipleCSVsToolStripMenuItem.Image = global::Thabab.Properties.Resources.ManyCSVs;
+            this.multipleCSVsToolStripMenuItem.Name = "multipleCSVsToolStripMenuItem";
+            this.multipleCSVsToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.multipleCSVsToolStripMenuItem.Text = "Multiple CSVs..";
+            this.multipleCSVsToolStripMenuItem.Click += new System.EventHandler(this.multipleCSVsToolStripMenuItem_Click);
             // 
             // plotToolStripMenuItem
             // 
@@ -257,6 +268,7 @@ namespace Thabab
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem Normalize_tripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SetFlaotingPoint_tripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem multipleCSVsToolStripMenuItem;
     }
 }
 

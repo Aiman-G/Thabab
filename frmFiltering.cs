@@ -27,7 +27,11 @@ namespace Thabab
             var datasource = dataGridViewInstance.DataSource;
             dgvShowFilteredData.DataSource = datasource;
 
-           
+            this.dgvShowFilteredData.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.dgvShowFilteredData.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+            this.dgvSummary.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.dgvSummary.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+
 
         }
 
@@ -177,6 +181,9 @@ namespace Thabab
 
             // Start the background worker
             backgroundWorker1.RunWorkerAsync();
+
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)

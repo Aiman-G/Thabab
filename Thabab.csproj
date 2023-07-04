@@ -13,7 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>E:\cSharp_dataVisu\Last_published\Revised\</PublishUrl>
+    <PublishUrl>D:\cSharp_dataVisu\Last_published\Thabab_app\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -66,6 +66,15 @@
   <ItemGroup>
     <Reference Include="MathNet.Numerics, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MathNet.Numerics.5.0.0\lib\net461\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="OxyPlot, Version=2.1.2.0, Culture=neutral, PublicKeyToken=638079a8f0bd61e9, processorArchitecture=MSIL">
       <HintPath>..\packages\OxyPlot.Core.2.1.2\lib\net45\OxyPlot.dll</HintPath>
@@ -116,6 +125,12 @@
     <Compile Include="frmCombinationPlots.Designer.cs">
       <DependentUpon>frmCombinationPlots.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCsvFilesClassification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCsvFilesClassification.Designer.cs">
+      <DependentUpon>frmCsvFilesClassification.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFiltering.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +142,12 @@
     </Compile>
     <Compile Include="frmFloatingPoint.Designer.cs">
       <DependentUpon>frmFloatingPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMultiCsvFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMultiCsvFiles.Designer.cs">
+      <DependentUpon>frmMultiCsvFiles.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNormalize.cs">
       <SubType>Form</SubType>
@@ -165,11 +186,17 @@
     <EmbeddedResource Include="frmCombinationPlots.resx">
       <DependentUpon>frmCombinationPlots.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCsvFilesClassification.resx">
+      <DependentUpon>frmCsvFilesClassification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFiltering.resx">
       <DependentUpon>frmFiltering.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFloatingPoint.resx">
       <DependentUpon>frmFloatingPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMultiCsvFiles.resx">
+      <DependentUpon>frmMultiCsvFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNormalize.resx">
       <DependentUpon>frmNormalize.cs</DependentUpon>
@@ -187,7 +214,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="luminous_TemporaryKey.pfx" />
+    <EmbeddedResource Include="Report1.rdlc" />
+    <None Include="thabab_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -238,6 +266,7 @@
     <None Include="Resources\ploticon22.png" />
     <None Include="Resources\Normalization_icon.png" />
     <None Include="Resources\FloatingPointIcon.png" />
+    <None Include="Resources\ManyCSVs.png" />
     <Content Include="Thabab.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

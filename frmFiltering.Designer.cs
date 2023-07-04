@@ -60,18 +60,18 @@ namespace Thabab
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.btnClearSelections);
             this.groupBox1.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 21);
+            this.groupBox1.Location = new System.Drawing.Point(12, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(629, 355);
+            this.groupBox1.Size = new System.Drawing.Size(629, 379);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Query ";
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(4, 99);
+            this.btnFilter.Location = new System.Drawing.Point(4, 106);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(194, 67);
+            this.btnFilter.Size = new System.Drawing.Size(194, 71);
             this.btnFilter.TabIndex = 3;
             this.btnFilter.Text = "Query";
             this.btnFilter.UseVisualStyleBackColor = true;
@@ -80,16 +80,16 @@ namespace Thabab
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.progressBar1.Location = new System.Drawing.Point(6, 319);
+            this.progressBar1.Location = new System.Drawing.Point(6, 340);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(623, 30);
+            this.progressBar1.Size = new System.Drawing.Size(623, 32);
             this.progressBar1.TabIndex = 3;
             // 
             // btnLoadUnfilterd
             // 
-            this.btnLoadUnfilterd.Location = new System.Drawing.Point(6, 257);
+            this.btnLoadUnfilterd.Location = new System.Drawing.Point(6, 274);
             this.btnLoadUnfilterd.Name = "btnLoadUnfilterd";
-            this.btnLoadUnfilterd.Size = new System.Drawing.Size(194, 56);
+            this.btnLoadUnfilterd.Size = new System.Drawing.Size(194, 60);
             this.btnLoadUnfilterd.TabIndex = 5;
             this.btnLoadUnfilterd.Text = "Load Unfiltred Data";
             this.btnLoadUnfilterd.UseVisualStyleBackColor = true;
@@ -98,9 +98,9 @@ namespace Thabab
             // btnUniqueValues
             // 
             this.btnUniqueValues.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUniqueValues.Location = new System.Drawing.Point(4, 30);
+            this.btnUniqueValues.Location = new System.Drawing.Point(4, 32);
             this.btnUniqueValues.Name = "btnUniqueValues";
-            this.btnUniqueValues.Size = new System.Drawing.Size(196, 63);
+            this.btnUniqueValues.Size = new System.Drawing.Size(196, 67);
             this.btnUniqueValues.TabIndex = 2;
             this.btnUniqueValues.Text = "Get Query Values";
             this.btnUniqueValues.UseVisualStyleBackColor = true;
@@ -110,16 +110,16 @@ namespace Thabab
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(206, 14);
+            this.panel1.Location = new System.Drawing.Point(206, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 299);
+            this.panel1.Size = new System.Drawing.Size(402, 319);
             this.panel1.TabIndex = 1;
             // 
             // btnClearSelections
             // 
-            this.btnClearSelections.Location = new System.Drawing.Point(6, 194);
+            this.btnClearSelections.Location = new System.Drawing.Point(6, 207);
             this.btnClearSelections.Name = "btnClearSelections";
-            this.btnClearSelections.Size = new System.Drawing.Size(192, 57);
+            this.btnClearSelections.Size = new System.Drawing.Size(192, 61);
             this.btnClearSelections.TabIndex = 6;
             this.btnClearSelections.Text = "Clear Selection";
             this.btnClearSelections.UseVisualStyleBackColor = true;
@@ -128,13 +128,14 @@ namespace Thabab
             // dgvShowFilteredData
             // 
             this.dgvShowFilteredData.AllowUserToAddRows = false;
+            this.dgvShowFilteredData.AllowUserToDeleteRows = false;
             this.dgvShowFilteredData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShowFilteredData.Location = new System.Drawing.Point(12, 382);
+            this.dgvShowFilteredData.Location = new System.Drawing.Point(12, 407);
             this.dgvShowFilteredData.Name = "dgvShowFilteredData";
             this.dgvShowFilteredData.ReadOnly = true;
             this.dgvShowFilteredData.RowHeadersWidth = 51;
             this.dgvShowFilteredData.RowTemplate.Height = 27;
-            this.dgvShowFilteredData.Size = new System.Drawing.Size(1371, 299);
+            this.dgvShowFilteredData.Size = new System.Drawing.Size(1371, 319);
             this.dgvShowFilteredData.TabIndex = 4;
             this.dgvShowFilteredData.DataSourceChanged += new System.EventHandler(this.dgvShowFilteredData_DataSourceChanged);
             this.dgvShowFilteredData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowFilteredData_CellContentClick);
@@ -149,18 +150,18 @@ namespace Thabab
             // 
             this.dgvSummary.AllowUserToAddRows = false;
             this.dgvSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSummary.Location = new System.Drawing.Point(30, 59);
+            this.dgvSummary.Location = new System.Drawing.Point(30, 63);
             this.dgvSummary.Name = "dgvSummary";
             this.dgvSummary.RowHeadersWidth = 51;
             this.dgvSummary.RowTemplate.Height = 27;
-            this.dgvSummary.Size = new System.Drawing.Size(699, 290);
+            this.dgvSummary.Size = new System.Drawing.Size(699, 309);
             this.dgvSummary.TabIndex = 7;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(30, 14);
+            this.button1.Location = new System.Drawing.Point(30, 15);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 39);
+            this.button1.Size = new System.Drawing.Size(112, 42);
             this.button1.TabIndex = 8;
             this.button1.Text = "Show";
             this.button1.UseVisualStyleBackColor = true;
@@ -170,9 +171,9 @@ namespace Thabab
             // 
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.dgvSummary);
-            this.groupBox2.Location = new System.Drawing.Point(648, 21);
+            this.groupBox2.Location = new System.Drawing.Point(648, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(735, 355);
+            this.groupBox2.Size = new System.Drawing.Size(735, 379);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Query Summary";
@@ -183,7 +184,7 @@ namespace Thabab
             this.statusStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip2.Location = new System.Drawing.Point(0, 684);
+            this.statusStrip2.Location = new System.Drawing.Point(0, 731);
             this.statusStrip2.Name = "statusStrip2";
             this.statusStrip2.Size = new System.Drawing.Size(1395, 26);
             this.statusStrip2.TabIndex = 11;
@@ -198,9 +199,9 @@ namespace Thabab
             // 
             // frmFiltering
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 710);
+            this.ClientSize = new System.Drawing.Size(1395, 757);
             this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvShowFilteredData);

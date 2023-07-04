@@ -50,11 +50,15 @@ namespace Thabab
                     // Create a new PlotModel for the current category
                     var model = new PlotModel();
                     model.Title = category;
+                    // adding labels to x-axis and y-axis
+                    model.Axes.Add(new OxyPlot.Axes.LinearAxis { Position = OxyPlot.Axes.AxisPosition.Bottom, Title = col1 });
+                    model.Axes.Add(new OxyPlot.Axes.LinearAxis { Position = OxyPlot.Axes.AxisPosition.Left, Title = col2 });
 
                     // Create a new series for the current category
                     var series = new LineSeries();
                     series.Title = category;
-
+                    
+                    
                     //series.Color = OxyColor.FromRgb(24, 255, 255);
 
                     // Add data points to the series

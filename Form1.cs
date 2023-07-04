@@ -21,6 +21,7 @@ namespace Thabab
 
 
         DataProcessing dpObject = new DataProcessing();
+        PopulatingTools popTools = new PopulatingTools();
 
       
 
@@ -59,7 +60,16 @@ namespace Thabab
         {
             //LstBox_cat_columns.Visible = false;
             //LstBoxTimeFlux.Visible = false;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkOrange;
             
+            // If you do not set the EnableHeadersVisualStyles flag to False,
+            // then the changes of backcolor you make to the style of the header will not take effect
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+
+            this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.Beige;
+
         }
 
         private void BtnOpenCsv_Click(object sender, EventArgs e)
@@ -113,14 +123,7 @@ namespace Thabab
         private string selectedItem;
                               
 
-        // when use double click the datagridview header, descriptive statistcs should be shown 
-
-        private void dataGridView1_ColumnHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-
-
-
-        }
+        
 
 
         
@@ -133,56 +136,12 @@ namespace Thabab
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "CSV Files (*.csv)|*.csv";
             openFileDialog1.Title = "Select a CSV File";
+            
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                // Read the contents of the selected CSV file into a DataTable.
-                DataTable dt = new DataTable();
-                using (StreamReader sr = new StreamReader(openFileDialog1.FileName))
-                {
-                    // Read the first line of the file to determine the column names.
-                    string headerLine = sr.ReadLine();
-                    if (headerLine == null)
-                    {
-                        MessageBox.Show("The selected file is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    string[] headers = headerLine.Split(',');
-                    if (headers.Length == 0)
-                    {
-                        MessageBox.Show("The selected file does not have any columns.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                string filePath = openFileDialog1.FileName;
+                DataTable dt = popTools.ReadCsvFile(filePath);  
 
-                    // Check that all column names are unique.
-                    if (headers.Distinct().Count() != headers.Length)
-                    {
-                        MessageBox.Show("The selected file has duplicate column names.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    // Add the columns to the DataTable.
-                    foreach (string header in headers)
-                    {
-                        dt.Columns.Add(header);
-                    }
-
-                    // Read the remaining lines of the file to add rows to the DataTable.
-                    while (!sr.EndOfStream)
-                    {
-                        string[] rows = sr.ReadLine().Split(',');
-                        if (rows.Length != headers.Length)
-                        {
-                            MessageBox.Show("The selected file has rows with different numbers of columns.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-                        DataRow dr = dt.NewRow();
-                        for (int i = 0; i < headers.Length; i++)
-                        {
-                            dr[i] = rows[i];
-                        }
-                        dt.Rows.Add(dr);
-                    }
-                }
 
                 // Set the DataTable as the DataSource of the DataGridView.
                 dataGridView1.DataSource = dt;
@@ -302,12 +261,16 @@ namespace Thabab
 
         private void exportToCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count == 0) { return; }
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
             saveFileDialog.RestoreDirectory = true;
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
+                
+
                 StringBuilder sb = new StringBuilder();
 
                 // Header
@@ -384,6 +347,43 @@ namespace Thabab
         {
             dataGridView1.Width = this.Width - 20;
             dataGridView1.Height = this.Height - (this.Height/4);
+        }
+
+        private void multipleCSVsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMultiCsvFiles frmMultiCSV = new frmMultiCsvFiles();
+            frmMultiCSV.Show();
+        }
+
+
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            // Check if the close button (X button) was clicked
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                // Display a MessageBox to confirm if the user wants to close the application
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // If the user clicks "No", cancel the closing event
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            toolStripStatusLabel1.Text = "No of Records:" + dataGridView1.Rows.Count;
+
+        }
+
+        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            toolStripStatusLabel1.Text = "No of Records:" + dataGridView1.Rows.Count;
         }
     }
 }
