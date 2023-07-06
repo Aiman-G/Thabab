@@ -346,7 +346,7 @@ namespace Thabab
         private void Form1_Resize(object sender, EventArgs e)
         {
             dataGridView1.Width = this.Width - 20;
-            dataGridView1.Height = this.Height - (this.Height/4);
+            dataGridView1.Height = this.Height - (this.Height/8);
         }
 
         private void multipleCSVsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -385,5 +385,55 @@ namespace Thabab
         {
             toolStripStatusLabel1.Text = "No of Records:" + dataGridView1.Rows.Count;
         }
+
+
+
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                //string rowidx = e.RowIndex.ToString();
+                //string colidx = e.ColumnIndex.ToString();
+                //MessageBox.Show("rowidx:"+ rowidx + "|col index" + colidx);
+                               
+                DataGridViewCell headerCell = dataGridView1.Columns[e.ColumnIndex].HeaderCell;
+
+                if (headerCell != null && headerCell.ColumnIndex == e.ColumnIndex)
+                {
+                    dataGridView1.ClearSelection();
+                    dataGridView1.Columns[e.ColumnIndex].Selected = true;
+
+                    ContextMenuStrip contextMenu = new ContextMenuStrip();
+                    ToolStripMenuItem deleteColumnMenuItem = new ToolStripMenuItem("Delete Column");
+                    deleteColumnMenuItem.Click += (deleteSender, deleteEventArgs) =>
+                    {
+                        if (e.ColumnIndex >= 0 && e.ColumnIndex < dataGridView1.Columns.Count)
+                        {
+                            DataGridViewColumn column = dataGridView1.Columns[e.ColumnIndex];
+                            dataGridView1.Columns.Remove(column);
+                        }
+                    };
+                    contextMenu.Items.Add(deleteColumnMenuItem);
+
+                    dataGridView1.ContextMenuStrip = contextMenu;
+                    contextMenu.Show(dataGridView1, dataGridView1.PointToClient(Cursor.Position));
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //___________________
     }
 }

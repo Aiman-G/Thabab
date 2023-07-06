@@ -49,11 +49,11 @@ namespace Thabab
             this.groupBox1.Controls.Add(this.cmb_cat_variable);
             this.groupBox1.Controls.Add(this.cmb_time);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(12, 23);
+            this.groupBox1.Location = new System.Drawing.Point(12, 25);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(605, 238);
+            this.groupBox1.Size = new System.Drawing.Size(605, 254);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Choose Variables";
@@ -63,37 +63,37 @@ namespace Thabab
             // 
             this.cmbFlux.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFlux.FormattingEnabled = true;
-            this.cmbFlux.Location = new System.Drawing.Point(9, 185);
+            this.cmbFlux.Location = new System.Drawing.Point(9, 197);
             this.cmbFlux.Name = "cmbFlux";
-            this.cmbFlux.Size = new System.Drawing.Size(185, 23);
+            this.cmbFlux.Size = new System.Drawing.Size(185, 24);
             this.cmbFlux.TabIndex = 11;
             this.cmbFlux.SelectedIndexChanged += new System.EventHandler(this.cmbFlux_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 166);
+            this.label3.Location = new System.Drawing.Point(6, 177);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 15);
+            this.label3.Size = new System.Drawing.Size(114, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "Choose Y Column";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(6, 44);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.label1.Location = new System.Drawing.Point(6, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 15);
+            this.label1.Size = new System.Drawing.Size(201, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Choose the Categorical Variable";
             // 
             // btnShowPlot
             // 
-            this.btnShowPlot.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnShowPlot.Location = new System.Drawing.Point(248, 104);
+            this.btnShowPlot.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.btnShowPlot.Location = new System.Drawing.Point(248, 111);
             this.btnShowPlot.Name = "btnShowPlot";
-            this.btnShowPlot.Size = new System.Drawing.Size(233, 37);
+            this.btnShowPlot.Size = new System.Drawing.Size(233, 39);
             this.btnShowPlot.TabIndex = 9;
             this.btnShowPlot.Text = "Show Plot(s)";
             this.btnShowPlot.UseVisualStyleBackColor = true;
@@ -103,9 +103,9 @@ namespace Thabab
             // 
             this.cmb_cat_variable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_cat_variable.FormattingEnabled = true;
-            this.cmb_cat_variable.Location = new System.Drawing.Point(6, 62);
+            this.cmb_cat_variable.Location = new System.Drawing.Point(6, 66);
             this.cmb_cat_variable.Name = "cmb_cat_variable";
-            this.cmb_cat_variable.Size = new System.Drawing.Size(188, 23);
+            this.cmb_cat_variable.Size = new System.Drawing.Size(188, 24);
             this.cmb_cat_variable.TabIndex = 7;
             this.cmb_cat_variable.SelectedIndexChanged += new System.EventHandler(this.cmb_cat_variable_SelectedIndexChanged);
             // 
@@ -113,27 +113,27 @@ namespace Thabab
             // 
             this.cmb_time.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_time.FormattingEnabled = true;
-            this.cmb_time.Location = new System.Drawing.Point(6, 118);
+            this.cmb_time.Location = new System.Drawing.Point(6, 126);
             this.cmb_time.Name = "cmb_time";
-            this.cmb_time.Size = new System.Drawing.Size(188, 23);
+            this.cmb_time.Size = new System.Drawing.Size(188, 24);
             this.cmb_time.TabIndex = 8;
             this.cmb_time.SelectedIndexChanged += new System.EventHandler(this.cmb_time_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(3, 100);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.label2.Location = new System.Drawing.Point(3, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 15);
+            this.label2.Size = new System.Drawing.Size(113, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Choose X Column";
             // 
             // frmCategPlots
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 300);
+            this.ClientSize = new System.Drawing.Size(652, 320);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;

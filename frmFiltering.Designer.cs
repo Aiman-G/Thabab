@@ -38,7 +38,6 @@ namespace Thabab
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClearSelections = new System.Windows.Forms.Button();
             this.dgvShowFilteredData = new System.Windows.Forms.DataGridView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dgvSummary = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -69,6 +68,7 @@ namespace Thabab
             // 
             // btnFilter
             // 
+            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.btnFilter.Location = new System.Drawing.Point(4, 106);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(194, 71);
@@ -87,6 +87,7 @@ namespace Thabab
             // 
             // btnLoadUnfilterd
             // 
+            this.btnLoadUnfilterd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.btnLoadUnfilterd.Location = new System.Drawing.Point(6, 274);
             this.btnLoadUnfilterd.Name = "btnLoadUnfilterd";
             this.btnLoadUnfilterd.Size = new System.Drawing.Size(194, 60);
@@ -97,7 +98,7 @@ namespace Thabab
             // 
             // btnUniqueValues
             // 
-            this.btnUniqueValues.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnUniqueValues.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.btnUniqueValues.Location = new System.Drawing.Point(4, 32);
             this.btnUniqueValues.Name = "btnUniqueValues";
             this.btnUniqueValues.Size = new System.Drawing.Size(196, 67);
@@ -117,6 +118,7 @@ namespace Thabab
             // 
             // btnClearSelections
             // 
+            this.btnClearSelections.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.btnClearSelections.Location = new System.Drawing.Point(6, 207);
             this.btnClearSelections.Name = "btnClearSelections";
             this.btnClearSelections.Size = new System.Drawing.Size(192, 61);
@@ -139,12 +141,6 @@ namespace Thabab
             this.dgvShowFilteredData.TabIndex = 4;
             this.dgvShowFilteredData.DataSourceChanged += new System.EventHandler(this.dgvShowFilteredData_DataSourceChanged);
             this.dgvShowFilteredData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowFilteredData_CellContentClick);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // dgvSummary
             // 
@@ -232,7 +228,6 @@ namespace Thabab
         private System.Windows.Forms.Button btnUniqueValues;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvShowFilteredData;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView dgvSummary;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;

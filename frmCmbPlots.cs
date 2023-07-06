@@ -56,7 +56,7 @@ namespace Thabab
             DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
             
             PopulatingTools popObj = new PopulatingTools();
-            popObj.comboxOfUniquevalues(dataGridViewInstance, panel1, backgroundWorker1);
+            popObj.comboxOfUniquevalues(dataGridViewInstance, panel1,null );
        
 
                   }

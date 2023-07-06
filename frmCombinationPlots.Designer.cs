@@ -45,9 +45,9 @@ namespace Thabab
             // 
             this.chkListColumns.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.chkListColumns.FormattingEnabled = true;
-            this.chkListColumns.Location = new System.Drawing.Point(31, 32);
+            this.chkListColumns.Location = new System.Drawing.Point(31, 34);
             this.chkListColumns.Name = "chkListColumns";
-            this.chkListColumns.Size = new System.Drawing.Size(162, 244);
+            this.chkListColumns.Size = new System.Drawing.Size(162, 259);
             this.chkListColumns.TabIndex = 0;
             this.chkListColumns.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.chkListColumns_ItemCheck);
             this.chkListColumns.SelectedIndexChanged += new System.EventHandler(this.chkListColumns_SelectedIndexChanged);
@@ -55,48 +55,48 @@ namespace Thabab
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.chkListColumns);
-            this.groupBox1.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.groupBox1.Location = new System.Drawing.Point(12, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(290, 288);
+            this.groupBox1.Size = new System.Drawing.Size(290, 307);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "1. Categorical Variable(s)";
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(16, 24);
+            this.panel1.Location = new System.Drawing.Point(16, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(470, 252);
+            this.panel1.Size = new System.Drawing.Size(470, 269);
             this.panel1.TabIndex = 2;
             this.panel1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.panel1_Scroll);
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 612);
+            this.progressBar1.Location = new System.Drawing.Point(12, 653);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(217, 39);
+            this.progressBar1.Size = new System.Drawing.Size(217, 42);
             this.progressBar1.TabIndex = 6;
             // 
             // dgvFilteredData
             // 
             this.dgvFilteredData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFilteredData.Location = new System.Drawing.Point(12, 295);
+            this.dgvFilteredData.Location = new System.Drawing.Point(12, 315);
             this.dgvFilteredData.Name = "dgvFilteredData";
             this.dgvFilteredData.ReadOnly = true;
             this.dgvFilteredData.RowHeadersWidth = 51;
             this.dgvFilteredData.RowTemplate.Height = 27;
-            this.dgvFilteredData.Size = new System.Drawing.Size(799, 311);
+            this.dgvFilteredData.Size = new System.Drawing.Size(799, 332);
             this.dgvFilteredData.TabIndex = 8;
             this.dgvFilteredData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFilteredData_CellContentClick);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.panel1);
-            this.groupBox2.Font = new System.Drawing.Font("SimSun", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.groupBox2.Location = new System.Drawing.Point(308, 1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(503, 288);
+            this.groupBox2.Size = new System.Drawing.Size(503, 307);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "2. Choose Variables Combination";
@@ -105,17 +105,17 @@ namespace Thabab
             // 
             this.lstViewChosenCombination.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lstViewChosenCombination.HideSelection = false;
-            this.lstViewChosenCombination.Location = new System.Drawing.Point(828, 25);
+            this.lstViewChosenCombination.Location = new System.Drawing.Point(828, 27);
             this.lstViewChosenCombination.Name = "lstViewChosenCombination";
-            this.lstViewChosenCombination.Size = new System.Drawing.Size(244, 252);
+            this.lstViewChosenCombination.Size = new System.Drawing.Size(244, 269);
             this.lstViewChosenCombination.TabIndex = 10;
             this.lstViewChosenCombination.UseCompatibleStateImageBehavior = false;
             // 
             // frmCombinationPlots
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 667);
+            this.ClientSize = new System.Drawing.Size(1156, 711);
             this.Controls.Add(this.lstViewChosenCombination);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvFilteredData);

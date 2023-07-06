@@ -16,7 +16,7 @@ namespace Thabab
         public frmFiltering()
         {
             InitializeComponent();
-            backgroundWorker1.WorkerReportsProgress = true; // set the WorkerReportsProgress property to true
+            
         }
 
         private void frmFiltering_Load(object sender, EventArgs e)
@@ -41,27 +41,6 @@ namespace Thabab
 
        
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            Form1 frmMain = (Form1)Application.OpenForms["Form1"];
-            DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
-
-            PopulatingTools popObj = new PopulatingTools();
-            popObj.comboxOfUniquevalues(dataGridViewInstance, panel1, backgroundWorker1);
-        }
-
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-
-            // Update the progress bar
-            progressBar1.Value = e.ProgressPercentage;
-        }
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            // Hide the progress bar when the task is complete
-            progressBar1.Visible = false;
-        }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
@@ -173,15 +152,33 @@ namespace Thabab
 
         }
 
-        private void btnUniqueValues_Click(object sender, EventArgs e)
+        private async void btnUniqueValues_Click(object sender, EventArgs e)
         {
-
             // Show the progress bar
             progressBar1.Visible = true;
+            btnUniqueValues.Enabled = false;
 
-            // Start the background worker
-            backgroundWorker1.RunWorkerAsync();
+            // Get the DataGridView instance
+            Form1 frmMain = (Form1)Application.OpenForms["Form1"];
+            DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
 
+            // Create an instance of Progress<int> to report progress
+            Progress<int> progress = new Progress<int>(value =>
+            {
+                // Update the progress bar value
+                progressBar1.Value = value;
+            });
+
+            // Perform the operation asynchronously
+            await Task.Run(() =>
+            {
+                PopulatingTools popObj = new PopulatingTools();
+                popObj.comboxOfUniquevalues(dataGridViewInstance, panel1, progressBar1);
+            });
+
+            // Hide the progress bar when the task is complete
+            progressBar1.Visible = false;
+            btnUniqueValues.Enabled = true;
 
 
         }

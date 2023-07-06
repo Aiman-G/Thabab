@@ -19,13 +19,12 @@ namespace Thabab
     {
         // adding comboxes with unique values of datagridview to a panel
 
-        public void comboxOfUniquevalues(DataGridView dgv, Panel pnl, BackgroundWorker bkgw)
-        {  // some times the column names are big, and the labels cannot show the full name, so the name can be shown as a tooltip
+        public void comboxOfUniquevalues(DataGridView dgv, Panel pnl, ProgressBar pbr)
+        {   // some times the column names are big, and the labels cannot show the full name, so the name can be shown as a tooltip
             ToolTip tltip = new ToolTip();
 
             try
             {
-
                 // Loop through the columns of the DataGridView and create a label and combobox for each column
                 for (int i = 0; i < dgv.Columns.Count; i++)
                 {
@@ -35,6 +34,7 @@ namespace Thabab
                     label.Top = i * 30;
                     label.Left = 10;
                     label.Width = 100;
+
                     // set the tooltip text to the label text
                     tltip.SetToolTip(label, label.Text);
 
@@ -53,7 +53,6 @@ namespace Thabab
 
                     // let the combobox name be the column name
                     comboBox.Name = dgv.Columns[i].HeaderText;
-                    //MessageBox.Show(comboBox.Name);
 
                     // Get the unique values of the column
                     var values = dgv.Rows.Cast<DataGridViewRow>()
@@ -74,13 +73,16 @@ namespace Thabab
                         pnl.Controls.Add(comboBox);
                     });
 
-
-                    // Report progress to the UI thread
+                    // Calculate progress percentage
                     int progressPercentage = (i + 1) * 100 / dgv.Columns.Count;
-                    bkgw.ReportProgress(progressPercentage);
+
+                    // Update the progress bar on the main thread
+                    pbr.Invoke((MethodInvoker)delegate
+                    {
+                        pbr.Value = progressPercentage;
+                    });
                 }
             }
-
             catch (Exception ex)
             {
                 // Handle any exceptions that are thrown by the function
@@ -271,8 +273,12 @@ namespace Thabab
             return distinctValues;
         }
 
+
         private bool IsCategoricalColumn(List<string> fileNames, string columnName)
         {
+            HashSet<string> uniqueValues = new HashSet<string>();
+            int rowCount = 0;
+
             foreach (string fileName in fileNames)
             {
                 using (StreamReader sr = new StreamReader(fileName))
@@ -294,11 +300,12 @@ namespace Thabab
 
                                 if (values.Length > columnIndex)
                                 {
-                                    string value = values[columnIndex];
+                                    string value = values[columnIndex].Trim();
 
-                                    if (!string.IsNullOrEmpty(value) && !IsNumeric(value))
+                                    if (!string.IsNullOrEmpty(value))
                                     {
-                                        return true;
+                                        uniqueValues.Add(value);
+                                        rowCount++;
                                     }
                                 }
                             }
@@ -307,13 +314,31 @@ namespace Thabab
                 }
             }
 
-            return false;
+            double uniqueValueRatioThreshold = 0.7; // Adjust the threshold as needed
+
+            double uniqueValueRatio = (double)uniqueValues.Count / rowCount;
+            return uniqueValueRatio < uniqueValueRatioThreshold;
         }
+
+
+
+
+
+
 
         private bool IsNumeric(string value)
         {
+            if (string.IsNullOrWhiteSpace(value))
+                return false;
+
+            value = value.Trim();
+
+            // Remove currency symbols or separators if present
+            value = value.Replace("$", "").Replace(",", "");
+
             return double.TryParse(value, out _);
         }
+
 
         //------------------------------------
 
