@@ -115,14 +115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Thabab.exe" size="2120688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Thabab.exe" size="2123248">
       <assemblyIdentity name="Thabab" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dbZJzxZDBimXXxZWcdf+F9VZW0wTxMgyWoQC0PWYZS8=</dsig:DigestValue>
+        <dsig:DigestValue>gAi1Q9tDkKEtVQm7PCvhIHZ6GGXMoJrGR+ml+9VTBiU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

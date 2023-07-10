@@ -70,6 +70,8 @@ namespace Thabab
             this.dgvSecondFileSummary.RowsDefaultCellStyle.BackColor = Color.Bisque;
             this.dgvSecondFileSummary.AlternatingRowsDefaultCellStyle.BackColor= Color.Beige;
 
+            
+
 
         }
 
@@ -93,7 +95,7 @@ namespace Thabab
                     // Perform further actions with filePath
                     FirstFilePath = filePath;
                     FirstFileName = clickedCell.FormattedValue.ToString();
-                    ColumnNamesToListViews();
+                    //ColumnNamesToListViews();
 
                     //MessageBox.Show($"File Path: {filePath}");
                 }
@@ -115,7 +117,7 @@ namespace Thabab
                     // Perform further actions with filePath
                     SecondFilePath = filePath;
                     SecondFileName = clickedCell.FormattedValue.ToString();
-                    ColumnNamesToListViews();
+                    //ColumnNamesToListViews();
                     //MessageBox.Show($"File Path: {filePath}");
                 }
             }
@@ -139,18 +141,16 @@ namespace Thabab
             switch (tabControlComparison.SelectedIndex)
             {
                 case 0:
-
+                    
                     ColumnNamesToListViews();
                     break;
 
                 case 1:
-                    SummarizeFileToDatagridView(FirstFilePath, dgvFirstFileSummary);
-                    SummarizeFileToDatagridView(SecondFilePath, dgvSecondFileSummary);
+                    
                     break;
 
                 case 2:
-                    PlotChartFromTable(FirstFilePath, chartFirstFile);
-                    PlotChartFromTable(SecondFilePath, chartSecondFile);
+                    
 
                     break;
 
@@ -173,6 +173,13 @@ namespace Thabab
 
             // Clear any existing series from the chart
             crtControl.Series.Clear();
+
+            // set properties of chart controls 
+
+            crtControl.ChartAreas[0].CursorX.IsUserEnabled = true;
+            crtControl.ChartAreas[0].CursorX.IsUserSelectionEnabled = true;
+            crtControl.ChartAreas[0].CursorY.IsUserEnabled = true;
+            crtControl.ChartAreas[0].CursorY.IsUserSelectionEnabled = true;
 
             // Check if the DataTable contains data
             if (chartDatatable != null && chartDatatable.Rows.Count > 0)
@@ -326,6 +333,53 @@ namespace Thabab
                 // Handle the case when the variables are empty
             }
         }
+
+        private void btnRefreshColumnsInfo_Click(object sender, EventArgs e)
+        {
+            ColumnNamesToListViews();
+        }
+
+        private  void btnRefreshSummary_Click(object sender, EventArgs e)
+        {
+            //show the prgressbar
+            // Change the mouse pointer to the wait cursor
+
+            Cursor = Cursors.WaitCursor;
+            btnRefreshSummary.Enabled = false;
+            lblFirstFileNameSummary.Text = FirstFileName;
+            lblSecondFileNameSummary.Text = SecondFileName;
+
+            btnRefreshSummary.Enabled = false;
+            SummarizeFileToDatagridView(FirstFilePath, dgvFirstFileSummary);
+            SummarizeFileToDatagridView(SecondFilePath, dgvSecondFileSummary);
+
+            Cursor = Cursors.Default;  
+            btnRefreshSummary.Enabled = true;
+      
+
+        }
+
+        private void btnRefreshChart_Click(object sender, EventArgs e)
+        {
+
+            Cursor = Cursors.WaitCursor;
+            // Disable the button during the operation
+            btnRefreshChart.Enabled = false;
+            lblFirstFileNameChart.Text = FirstFileName;
+            lblSecondFileNameChart.Text = SecondFileName;
+
+            
+           PlotChartFromTable(FirstFilePath, chartFirstFile);
+           PlotChartFromTable(SecondFilePath, chartSecondFile);
+           
+
+            Cursor = Cursors.Default;
+
+            // Enable the button after the operation is complete
+            btnRefreshChart.Enabled = true;
+        }
+
+
 
 
 
