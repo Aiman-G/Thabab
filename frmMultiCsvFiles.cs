@@ -57,13 +57,9 @@ namespace Thabab
             //helpProvider1.SetHelpString(btnClassifyCsvFiles, "This will take you to a new window, " +"where you can get the files with common column names/numbers grouped, so that you can combine similar files." +
               //  " The files that will get grouped are in the below list.");
             
-
             helpProvider1.SetHelpString(btnResetFiltering, "Retrieve the orginal items before filtering.");
             
-                
-
-
-
+            
             // set the number of files label to 0;
             lblFilesNumber.Text = "No of Files: " + lsvFileNames.Items.Count.ToString();
 
