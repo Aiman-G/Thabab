@@ -30,13 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMultiCsvFiles));
-            this.btnMultiCsvUpload = new System.Windows.Forms.Button();
             this.lsvFileNames = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.lblFilesNumber = new System.Windows.Forms.Label();
             this.dgvShowSelected = new System.Windows.Forms.DataGridView();
             this.checkedListBoxColumns = new System.Windows.Forms.CheckedListBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnFilterFileNames = new System.Windows.Forms.Button();
             this.groupBoxColDistmictValues = new System.Windows.Forms.GroupBox();
             this.btnResetFiltering = new System.Windows.Forms.Button();
@@ -48,36 +46,32 @@
             this.txtCatCols = new System.Windows.Forms.TextBox();
             this.groupBoxCombinationCols = new System.Windows.Forms.GroupBox();
             this.btnUniqueColumnNames = new System.Windows.Forms.Button();
-            this.btnClassifyCsvFiles = new System.Windows.Forms.Button();
             this.btnDistinctValuesAcrossFiles = new System.Windows.Forms.Button();
             this.lblNoOfRecords = new System.Windows.Forms.Label();
-            this.pictureBoxHome = new System.Windows.Forms.PictureBox();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnExportToMain = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripBtnUpladCSVs = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnMatchandConcat = new System.Windows.Forms.ToolStripButton();
+            this.toolStripbtnSideBySide = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBtnHome = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowSelected)).BeginInit();
             this.groupBoxColDistmictValues.SuspendLayout();
             this.panelColDistmictValues.SuspendLayout();
             this.groupBoxCombinationCols.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).BeginInit();
+            this.statusStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnMultiCsvUpload
-            // 
-            this.btnMultiCsvUpload.Location = new System.Drawing.Point(15, 12);
-            this.btnMultiCsvUpload.Name = "btnMultiCsvUpload";
-            this.btnMultiCsvUpload.Size = new System.Drawing.Size(155, 40);
-            this.btnMultiCsvUpload.TabIndex = 2;
-            this.btnMultiCsvUpload.Text = "Upload CSVs";
-            this.btnMultiCsvUpload.UseVisualStyleBackColor = true;
-            this.btnMultiCsvUpload.Click += new System.EventHandler(this.btnMultiCsvUpload_Click);
             // 
             // lsvFileNames
             // 
             this.lsvFileNames.HideSelection = false;
             this.lsvFileNames.Location = new System.Drawing.Point(312, 53);
             this.lsvFileNames.Name = "lsvFileNames";
-            this.lsvFileNames.Size = new System.Drawing.Size(273, 327);
+            this.lsvFileNames.Size = new System.Drawing.Size(259, 327);
             this.lsvFileNames.TabIndex = 3;
             this.lsvFileNames.UseCompatibleStateImageBehavior = false;
             this.lsvFileNames.View = System.Windows.Forms.View.Tile;
@@ -106,12 +100,13 @@
             // 
             this.dgvShowSelected.AllowUserToAddRows = false;
             this.dgvShowSelected.AllowUserToOrderColumns = true;
+            this.dgvShowSelected.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvShowSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvShowSelected.Location = new System.Drawing.Point(12, 536);
+            this.dgvShowSelected.Location = new System.Drawing.Point(12, 525);
             this.dgvShowSelected.Name = "dgvShowSelected";
             this.dgvShowSelected.RowHeadersWidth = 51;
             this.dgvShowSelected.RowTemplate.Height = 24;
-            this.dgvShowSelected.Size = new System.Drawing.Size(1623, 302);
+            this.dgvShowSelected.Size = new System.Drawing.Size(1543, 302);
             this.dgvShowSelected.TabIndex = 6;
             this.dgvShowSelected.DataSourceChanged += new System.EventHandler(this.dgvShowSelected_DataSourceChanged);
             // 
@@ -122,13 +117,6 @@
             this.checkedListBoxColumns.Name = "checkedListBoxColumns";
             this.checkedListBoxColumns.Size = new System.Drawing.Size(188, 327);
             this.checkedListBoxColumns.TabIndex = 7;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(1, 877);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(1648, 26);
-            this.progressBar1.TabIndex = 8;
             // 
             // btnFilterFileNames
             // 
@@ -142,6 +130,7 @@
             // 
             // groupBoxColDistmictValues
             // 
+            this.groupBoxColDistmictValues.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxColDistmictValues.BackColor = System.Drawing.SystemColors.Control;
             this.groupBoxColDistmictValues.Controls.Add(this.btnResetFiltering);
             this.groupBoxColDistmictValues.Controls.Add(this.lblFileNumberOfCatcols);
@@ -152,14 +141,14 @@
             this.groupBoxColDistmictValues.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBoxColDistmictValues.Location = new System.Drawing.Point(738, 85);
             this.groupBoxColDistmictValues.Name = "groupBoxColDistmictValues";
-            this.groupBoxColDistmictValues.Size = new System.Drawing.Size(886, 420);
+            this.groupBoxColDistmictValues.Size = new System.Drawing.Size(817, 420);
             this.groupBoxColDistmictValues.TabIndex = 11;
             this.groupBoxColDistmictValues.TabStop = false;
             this.groupBoxColDistmictValues.Text = "Distnict Values of Categorical Vairables Across Files";
             // 
             // btnResetFiltering
             // 
-            this.btnResetFiltering.Location = new System.Drawing.Point(478, 238);
+            this.btnResetFiltering.Location = new System.Drawing.Point(461, 243);
             this.btnResetFiltering.Name = "btnResetFiltering";
             this.btnResetFiltering.Size = new System.Drawing.Size(92, 36);
             this.btnResetFiltering.TabIndex = 16;
@@ -170,7 +159,7 @@
             // lblFileNumberOfCatcols
             // 
             this.lblFileNumberOfCatcols.AutoSize = true;
-            this.lblFileNumberOfCatcols.Location = new System.Drawing.Point(570, 365);
+            this.lblFileNumberOfCatcols.Location = new System.Drawing.Point(551, 365);
             this.lblFileNumberOfCatcols.Name = "lblFileNumberOfCatcols";
             this.lblFileNumberOfCatcols.Size = new System.Drawing.Size(77, 16);
             this.lblFileNumberOfCatcols.TabIndex = 15;
@@ -180,16 +169,16 @@
             // 
             this.progressBarCatCols.Location = new System.Drawing.Point(0, 397);
             this.progressBarCatCols.Name = "progressBarCatCols";
-            this.progressBarCatCols.Size = new System.Drawing.Size(886, 23);
+            this.progressBarCatCols.Size = new System.Drawing.Size(817, 23);
             this.progressBarCatCols.TabIndex = 14;
             this.progressBarCatCols.Visible = false;
             // 
             // lsvFilterdByCatCols
             // 
             this.lsvFilterdByCatCols.HideSelection = false;
-            this.lsvFilterdByCatCols.Location = new System.Drawing.Point(571, 18);
+            this.lsvFilterdByCatCols.Location = new System.Drawing.Point(554, 16);
             this.lsvFilterdByCatCols.Name = "lsvFilterdByCatCols";
-            this.lsvFilterdByCatCols.Size = new System.Drawing.Size(299, 346);
+            this.lsvFilterdByCatCols.Size = new System.Drawing.Size(248, 346);
             this.lsvFilterdByCatCols.TabIndex = 13;
             this.lsvFilterdByCatCols.UseCompatibleStateImageBehavior = false;
             this.lsvFilterdByCatCols.View = System.Windows.Forms.View.Tile;
@@ -197,7 +186,7 @@
             // 
             // btnFilterByCatCols
             // 
-            this.btnFilterByCatCols.Location = new System.Drawing.Point(478, 88);
+            this.btnFilterByCatCols.Location = new System.Drawing.Point(461, 95);
             this.btnFilterByCatCols.Name = "btnFilterByCatCols";
             this.btnFilterByCatCols.Size = new System.Drawing.Size(87, 41);
             this.btnFilterByCatCols.TabIndex = 12;
@@ -234,7 +223,6 @@
             // 
             this.groupBoxCombinationCols.BackColor = System.Drawing.SystemColors.Control;
             this.groupBoxCombinationCols.Controls.Add(this.btnUniqueColumnNames);
-            this.groupBoxCombinationCols.Controls.Add(this.btnClassifyCsvFiles);
             this.groupBoxCombinationCols.Controls.Add(this.lsvFileNames);
             this.groupBoxCombinationCols.Controls.Add(this.btnFilterFileNames);
             this.groupBoxCombinationCols.Controls.Add(this.checkedListBoxColumns);
@@ -258,16 +246,6 @@
             this.btnUniqueColumnNames.UseVisualStyleBackColor = true;
             this.btnUniqueColumnNames.Click += new System.EventHandler(this.btnUniqueColumnNames_Click);
             // 
-            // btnClassifyCsvFiles
-            // 
-            this.btnClassifyCsvFiles.Location = new System.Drawing.Point(375, 18);
-            this.btnClassifyCsvFiles.Name = "btnClassifyCsvFiles";
-            this.btnClassifyCsvFiles.Size = new System.Drawing.Size(120, 32);
-            this.btnClassifyCsvFiles.TabIndex = 10;
-            this.btnClassifyCsvFiles.Text = "Quick Filtering";
-            this.btnClassifyCsvFiles.UseVisualStyleBackColor = true;
-            this.btnClassifyCsvFiles.Click += new System.EventHandler(this.btnClassifyCsvFiles_Click);
-            // 
             // btnDistinctValuesAcrossFiles
             // 
             this.btnDistinctValuesAcrossFiles.Location = new System.Drawing.Point(643, 173);
@@ -280,24 +258,13 @@
             // 
             // lblNoOfRecords
             // 
+            this.lblNoOfRecords.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNoOfRecords.AutoSize = true;
-            this.lblNoOfRecords.Location = new System.Drawing.Point(12, 841);
+            this.lblNoOfRecords.Location = new System.Drawing.Point(12, 834);
             this.lblNoOfRecords.Name = "lblNoOfRecords";
             this.lblNoOfRecords.Size = new System.Drawing.Size(97, 16);
             this.lblNoOfRecords.TabIndex = 14;
             this.lblNoOfRecords.Text = "No of Records:";
-            // 
-            // pictureBoxHome
-            // 
-            this.pictureBoxHome.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxHome.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxHome.Image")));
-            this.pictureBoxHome.Location = new System.Drawing.Point(1575, 12);
-            this.pictureBoxHome.Name = "pictureBoxHome";
-            this.pictureBoxHome.Size = new System.Drawing.Size(49, 50);
-            this.pictureBoxHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxHome.TabIndex = 15;
-            this.pictureBoxHome.TabStop = false;
-            this.pictureBoxHome.Click += new System.EventHandler(this.pictureBoxHome_Click);
             // 
             // toolTip1
             // 
@@ -305,7 +272,8 @@
             // 
             // btnExportToMain
             // 
-            this.btnExportToMain.Location = new System.Drawing.Point(1436, 841);
+            this.btnExportToMain.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportToMain.Location = new System.Drawing.Point(1396, 833);
             this.btnExportToMain.Name = "btnExportToMain";
             this.btnExportToMain.Size = new System.Drawing.Size(159, 30);
             this.btnExportToMain.TabIndex = 16;
@@ -313,21 +281,90 @@
             this.btnExportToMain.UseVisualStyleBackColor = true;
             this.btnExportToMain.Click += new System.EventHandler(this.btnExportToMain_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 872);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1584, 32);
+            this.statusStrip1.TabIndex = 17;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(1540, 24);
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(35, 30);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripBtnUpladCSVs,
+            this.toolStripBtnMatchandConcat,
+            this.toolStripbtnSideBySide,
+            this.toolStripBtnHome});
+            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1584, 37);
+            this.toolStrip1.TabIndex = 18;
+            this.toolStrip1.Text = "Operations";
+            // 
+            // toolStripBtnUpladCSVs
+            // 
+            this.toolStripBtnUpladCSVs.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnUpladCSVs.Image")));
+            this.toolStripBtnUpladCSVs.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnUpladCSVs.Name = "toolStripBtnUpladCSVs";
+            this.toolStripBtnUpladCSVs.Size = new System.Drawing.Size(133, 34);
+            this.toolStripBtnUpladCSVs.Text = "Upload CSVs";
+            this.toolStripBtnUpladCSVs.Click += new System.EventHandler(this.toolStripBtnUpladCSVs_Click);
+            // 
+            // toolStripBtnMatchandConcat
+            // 
+            this.toolStripBtnMatchandConcat.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnMatchandConcat.Image")));
+            this.toolStripBtnMatchandConcat.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnMatchandConcat.Name = "toolStripBtnMatchandConcat";
+            this.toolStripBtnMatchandConcat.Size = new System.Drawing.Size(165, 34);
+            this.toolStripBtnMatchandConcat.Text = "Match and Merge";
+            this.toolStripBtnMatchandConcat.Click += new System.EventHandler(this.toolStripBtnMatchandConcat_Click);
+            // 
+            // toolStripbtnSideBySide
+            // 
+            this.toolStripbtnSideBySide.Image = ((System.Drawing.Image)(resources.GetObject("toolStripbtnSideBySide.Image")));
+            this.toolStripbtnSideBySide.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripbtnSideBySide.Name = "toolStripbtnSideBySide";
+            this.toolStripbtnSideBySide.Size = new System.Drawing.Size(109, 34);
+            this.toolStripbtnSideBySide.Text = "Compare";
+            this.toolStripbtnSideBySide.ToolTipText = "Compare files side by side";
+            this.toolStripbtnSideBySide.Click += new System.EventHandler(this.toolStripbtnSideBySide_Click);
+            // 
+            // toolStripBtnHome
+            // 
+            this.toolStripBtnHome.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnHome.Image")));
+            this.toolStripBtnHome.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBtnHome.Name = "toolStripBtnHome";
+            this.toolStripBtnHome.Size = new System.Drawing.Size(89, 34);
+            this.toolStripBtnHome.Text = "Home";
+            this.toolStripBtnHome.ToolTipText = "Show the main window";
+            this.toolStripBtnHome.Click += new System.EventHandler(this.toolStripBtnHome_Click);
+            // 
             // frmMultiCsvFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1647, 904);
+            this.ClientSize = new System.Drawing.Size(1584, 904);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btnExportToMain);
-            this.Controls.Add(this.pictureBoxHome);
             this.Controls.Add(this.lblNoOfRecords);
             this.Controls.Add(this.btnDistinctValuesAcrossFiles);
             this.Controls.Add(this.groupBoxCombinationCols);
             this.Controls.Add(this.groupBoxColDistmictValues);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.dgvShowSelected);
-            this.Controls.Add(this.btnMultiCsvUpload);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -342,20 +379,21 @@
             this.panelColDistmictValues.PerformLayout();
             this.groupBoxCombinationCols.ResumeLayout(false);
             this.groupBoxCombinationCols.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHome)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnMultiCsvUpload;
         private System.Windows.Forms.ListView lsvFileNames;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblFilesNumber;
         private System.Windows.Forms.DataGridView dgvShowSelected;
         private System.Windows.Forms.CheckedListBox checkedListBoxColumns;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button btnFilterFileNames;
         private System.Windows.Forms.GroupBox groupBoxColDistmictValues;
         private System.Windows.Forms.Panel panelColDistmictValues;
@@ -367,12 +405,17 @@
         private System.Windows.Forms.ProgressBar progressBarCatCols;
         private System.Windows.Forms.Label lblFileNumberOfCatcols;
         private System.Windows.Forms.Label lblNoOfRecords;
-        private System.Windows.Forms.Button btnClassifyCsvFiles;
         private System.Windows.Forms.Button btnUniqueColumnNames;
-        private System.Windows.Forms.PictureBox pictureBoxHome;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.Button btnResetFiltering;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button btnExportToMain;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripBtnUpladCSVs;
+        private System.Windows.Forms.ToolStripButton toolStripBtnMatchandConcat;
+        private System.Windows.Forms.ToolStripButton toolStripbtnSideBySide;
+        private System.Windows.Forms.ToolStripButton toolStripBtnHome;
     }
 }

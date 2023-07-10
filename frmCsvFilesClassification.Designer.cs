@@ -159,7 +159,7 @@
             this.Controls.Add(this.dgvShowCSVFile);
             this.Controls.Add(this.btnGetClassfiedFiles);
             this.Name = "frmCsvFilesClassification";
-            this.Text = "frmCsvFilesClassification";
+            this.Text = "Classify Files by Their Common Columns & Concatenate";
             this.Load += new System.EventHandler(this.frmCsvFilesClassification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowCSVFile)).EndInit();
             this.statusStrip1.ResumeLayout(false);

@@ -15,7 +15,7 @@ namespace Thabab
     {
 
         //SummarizeDataGridView
-       
+
 
         public void SummarizeDataGridView(DataGridView source, DataGridView target)
         {
@@ -33,21 +33,21 @@ namespace Thabab
             target.Columns.Add("Count", "Count");
 
             // Add a row for each column in the source grid
-            for (int i = 0; i < source.Columns.Count; i++)
+            foreach (DataGridViewColumn column in source.Columns)
             {
                 // Get the column name and data type
-                string columnName = source.Columns[i].HeaderText;
-                Type dataType = source.Columns[i].ValueType;
+                string columnName = column.HeaderText;
+                Type dataType = column.ValueType;
 
                 // Calculate summary information for the column
                 var uniqueValues = source.Rows.Cast<DataGridViewRow>()
-                                    .Select(row => row.Cells[i].Value)
+                                    .Select(row => row.Cells[column.Index].Value)
                                     .Where(value => value != null && value != DBNull.Value && !string.IsNullOrWhiteSpace(value.ToString()))
                                     .Distinct().Count();
 
                 var numericValues = source.Rows.Cast<DataGridViewRow>()
-                                    .Select(row => row.Cells[i].Value)
-                                    .Where(value => value != null && value != DBNull.Value && !string.IsNullOrWhiteSpace(value.ToString()) && double.TryParse(value.ToString(), out _) )
+                                    .Select(row => row.Cells[column.Index].Value)
+                                    .Where(value => value != null && value != DBNull.Value && !string.IsNullOrWhiteSpace(value.ToString()) && double.TryParse(value.ToString(), out _))
                                     .Select(value => Convert.ToDouble(value));
 
                 double max = double.NaN;
@@ -72,7 +72,7 @@ namespace Thabab
 
 
 
-       
+
 
 
 

@@ -33,60 +33,7 @@ namespace Thabab
 
         private List<ListViewItem> originalItemsForCatColumnsListview;
 
-        private async void btnMultiCsvUpload_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Multiselect = true;
-            openFileDialog.Filter = "CSV files (*.csv)|*.csv";
-            checkedListBoxColumns.Items.Clear();
-            lsvFileNames.Items.Clear();
-            lblFilesNumber.Text = "No of Files:" + 0;
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                // Disable the button to prevent multiple clicks
-                btnMultiCsvUpload.Enabled = false;
-
-                // Show the progress bar
-                progressBar1.Visible = true;
-                progressBar1.Value = 0;
-                progressBar1.Maximum = openFileDialog.FileNames.Length;
-
-                await Task.Run(() =>
-                {
-                    // Read and process the CSV files asynchronously
-                    foreach (string filePath in openFileDialog.FileNames)
-                    {
-                        string fileName = Path.GetFileName(filePath);
-                        ListViewItem listItem = new ListViewItem(fileName);
-                        listItem.Tag = filePath;
-
-                        // Invoke the ListView control on the UI thread to update its items
-                        lsvFileNames.Invoke((MethodInvoker)delegate
-                        {
-                            lsvFileNames.Items.Add(listItem);
-                        });
-
-                        // Update the progress bar value on the UI thread
-                        progressBar1.Invoke((MethodInvoker)delegate
-                        {
-                            progressBar1.Value++;
-                        });
-                    }
-                });
-
-                // Update the file numbers in the label
-                lblFilesNumber.Text = "No of Files: " + lsvFileNames.Items.Count.ToString();
-
-                // Re-enable the button
-                btnMultiCsvUpload.Enabled = true;
-
-                // Reset the progress bar
-                progressBar1.Value = 0;
-                progressBar1.Visible = false;
-            }
-        }
-
+      
 
 
 
@@ -97,8 +44,7 @@ namespace Thabab
 
         private void frmMultiCsvFiles_Load(object sender, EventArgs e)
         {
-            this.Width = 1254;
-            this.Height = 777;
+            
             helpProvider1.SetHelpString(btnFilterByCatCols, "Filter the files according to categorical variables values on the left. ");
             helpProvider1.SetHelpString(btnUniqueColumnNames, "Get the unique column names accross all the files. ");
             helpProvider1.SetHelpString(btnFilterFileNames, "Get the fiels that contain the chosen columns .");
@@ -107,10 +53,10 @@ namespace Thabab
                 "Perfectionism!");
             helpProvider1.SetHelpString(lsvFileNames, "Double click on the files name to show its content.");
             helpProvider1.SetHelpString(lsvFilterdByCatCols, "Double click on the file name to show its content.");
-            helpProvider1.SetHelpString(btnClassifyCsvFiles, "This will take you to a new window, " +
-                "where you can get the files with common column names/numbers grouped, so that you can combine similar files." +
-                " The files that will get grouped are in the below list.");
-            helpProvider1.SetHelpString(pictureBoxHome, "Show the main window.");
+           
+            //helpProvider1.SetHelpString(btnClassifyCsvFiles, "This will take you to a new window, " +"where you can get the files with common column names/numbers grouped, so that you can combine similar files." +
+              //  " The files that will get grouped are in the below list.");
+            
 
             helpProvider1.SetHelpString(btnResetFiltering, "Retrieve the orginal items before filtering.");
             
@@ -121,8 +67,17 @@ namespace Thabab
             // set the number of files label to 0;
             lblFilesNumber.Text = "No of Files: " + lsvFileNames.Items.Count.ToString();
 
+            //LstBoxTimeFlux.Visible = false;
+            this.dgvShowSelected.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkOrange;
+
+            // If you do not set the EnableHeadersVisualStyles flag to False,
+            // then the changes of backcolor you make to the style of the header will not take effect
+            this.dgvShowSelected.EnableHeadersVisualStyles = false;
+
             this.dgvShowSelected.RowsDefaultCellStyle.BackColor = Color.Bisque;
             this.dgvShowSelected.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+
+            
 
         }
 
@@ -152,10 +107,10 @@ namespace Thabab
             btnFilterFileNames.Enabled = false;
 
             // Show the progress bar
-            progressBar1.Visible = true;
+            toolStripProgressBar1.Visible = true;
 
             // Start the progress bar animation
-            progressBar1.Style = ProgressBarStyle.Marquee;
+            toolStripProgressBar1.Style = ProgressBarStyle.Marquee;
 
             // Get the selected column names from the CheckedListBox
             List<string> selectedColumns = new List<string>();
@@ -199,9 +154,14 @@ namespace Thabab
             // Update the file numbers in the label
             lblFilesNumber.Text = "No of Files: " + lsvFileNames.Items.Count.ToString();
 
-            
+            // becuase data of this lsvFilterdByCatCols is form lsvFileNames, if we the data there filtered, we need ot clean thigs in lsvFilterdByCatCols .
+            lsvFilterdByCatCols.Items.Clear();
+            panelColDistmictValues.Controls.Clear();
+            lblFileNumberOfCatcols.Text = "No of Files: " + 0;
+
+
             // Hide the progress bar
-            progressBar1.Visible = false;
+            toolStripProgressBar1.Visible = false;
 
             // Re-enable the filter button
             btnFilterFileNames.Enabled = true;
@@ -218,8 +178,8 @@ namespace Thabab
             btnFilterByCatCols.Enabled = false;
 
             // Show the progress bar
-            progressBar1.Visible = true;
-            progressBar1.Style = ProgressBarStyle.Marquee;
+            toolStripProgressBar1.Visible = true;
+            toolStripProgressBar1.Style = ProgressBarStyle.Marquee;
 
             // Retrieve selected values from comboboxes on the main UI thread
             Dictionary<string, string> selectedValues = new Dictionary<string, string>();
@@ -279,8 +239,8 @@ namespace Thabab
                 lsvFilterdByCatCols.EndUpdate();
 
                 // Hide the progress bar
-                progressBar1.Visible = false;
-                progressBar1.Style = ProgressBarStyle.Blocks;
+                toolStripProgressBar1.Visible = false;
+                toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
 
                 // Enable the button
                 btnFilterByCatCols.Enabled = true;
@@ -312,7 +272,7 @@ namespace Thabab
             //Disable the button that filter by categerocal columns
             btnFilterByCatCols.Enabled = false;
             btnFilterFileNames.Enabled= false;
-            btnMultiCsvUpload.Enabled = false;
+            toolStripBtnUpladCSVs.Enabled = false;
             btnResetFiltering.Enabled = false;
 
             // Clear the panel before populating it
@@ -403,7 +363,7 @@ namespace Thabab
             btnFilterByCatCols.Enabled = true;
 
             btnFilterFileNames.Enabled= true;
-            btnMultiCsvUpload.Enabled = true;
+            toolStripBtnUpladCSVs.Enabled = true;
             btnResetFiltering.Enabled = true;
 
 
@@ -418,12 +378,7 @@ namespace Thabab
 
         }
 
-        private void btnClassifyCsvFiles_Click(object sender, EventArgs e)
-        {
-            frmCsvFilesClassification frmClassifyCsvs = new frmCsvFilesClassification();
-            frmClassifyCsvs.Show();
-
-        }
+       
 
         private async void btnUniqueColumnNames_Click(object sender, EventArgs e)
         {
@@ -438,8 +393,8 @@ namespace Thabab
 
             // Disable the button and show the progress bar
             btnUniqueColumnNames.Enabled = false;
-            progressBar1.Visible = true;
-            progressBar1.Style = ProgressBarStyle.Marquee;
+            toolStripProgressBar1.Visible = true;
+            toolStripProgressBar1.Style = ProgressBarStyle.Marquee;
 
             List<string> fileNames = new List<string>();
 
@@ -469,7 +424,7 @@ namespace Thabab
                     originalItems = new List<ListViewItem>(lsvFileNames.Items.Cast<ListViewItem>());
 
                     // Hide the progress bar
-                    progressBar1.Visible = false;
+                    toolStripProgressBar1.Visible = false;
 
                     // Enable the button
                     btnUniqueColumnNames.Enabled = true;
@@ -482,11 +437,7 @@ namespace Thabab
 
         }
 
-        private void pictureBoxHome_Click(object sender, EventArgs e)
-        {
-            Form1 frmMain = (Form1)Application.OpenForms["Form1"];
-            frmMain.BringToFront();
-        }
+        
 
         private void btnResetFiltering_Click(object sender, EventArgs e)
         {
@@ -506,6 +457,15 @@ namespace Thabab
 
             // Update the file numbers in the label
             lblFileNumberOfCatcols.Text = "No of Files: " + lsvFilterdByCatCols.Items.Count.ToString();
+
+            foreach (Control control in panelColDistmictValues.Controls)
+            {
+                if (control is System.Windows.Forms.ComboBox comboBox && comboBox.SelectedItem != null)
+                {
+                    comboBox.SelectedItem = null;
+
+                }
+            }
         }
 
         private void btnExportToMain_Click(object sender, EventArgs e)
@@ -517,6 +477,94 @@ namespace Thabab
             dgvAtMainWindw.DataSource = dgvShowSelected.DataSource;
             frmMain.Show();
             frmMain.BringToFront();
+        }
+
+        private async void toolStripBtnUpladCSVs_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Multiselect = true;
+            openFileDialog.Filter = "CSV files (*.csv)|*.csv";
+
+            //clear contorls
+            checkedListBoxColumns.Items.Clear();
+            lsvFileNames.Items.Clear();
+            lblFilesNumber.Text = "No of Files:" + 0;
+
+            // becuase data of this list view is form lsvFileNames, if we uplaod new file we need to clear it.
+            lsvFilterdByCatCols.Items.Clear();
+            panelColDistmictValues.Controls.Clear();
+            lblFileNumberOfCatcols.Text = "No of Files: " + 0;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Disable the button to prevent multiple clicks
+                toolStripBtnUpladCSVs.Enabled = false;
+
+                // Show the progress bar
+                toolStripProgressBar1.Visible = true;
+                toolStripProgressBar1.Value = 0;
+                toolStripProgressBar1.Maximum = openFileDialog.FileNames.Length;
+
+                await Task.Run(() =>
+                {
+                    // Read and process the CSV files asynchronously
+                    foreach (string filePath in openFileDialog.FileNames)
+                    {
+                        string fileName = Path.GetFileName(filePath);
+                        ListViewItem listItem = new ListViewItem(fileName);
+                        listItem.Tag = filePath;
+
+                        // Invoke the ListView control on the UI thread to update its items
+                        lsvFileNames.Invoke((MethodInvoker)delegate
+                        {
+                            lsvFileNames.Items.Add(listItem);
+                        });
+
+                        // Update the progress bar value on the UI thread
+                        statusStrip1.Invoke((MethodInvoker)delegate
+                        {
+                            toolStripProgressBar1.Value++;
+                        });
+                    }
+                });
+
+                // Update the file numbers in the label
+                lblFilesNumber.Text = "No of Files: " + lsvFileNames.Items.Count.ToString();
+
+                // Re-enable the button
+                toolStripBtnUpladCSVs.Enabled = true;
+
+                // Reset the progress bar
+                toolStripProgressBar1.Value = 0;
+                toolStripProgressBar1.Visible = false;
+            }
+
+        }
+
+        private void toolStripBtnMatchandConcat_Click(object sender, EventArgs e)
+        {
+
+            if (lsvFileNames.Items.Count <= 1) { return; };
+
+            frmCsvFilesClassification frmClassifyCsvs = new frmCsvFilesClassification();
+            frmClassifyCsvs.Show();
+
+        }
+
+        private void toolStripBtnHome_Click(object sender, EventArgs e)
+        {
+            Form1 frmMain = (Form1)Application.OpenForms["Form1"];
+            frmMain.BringToFront();
+        }
+
+        private void toolStripbtnSideBySide_Click(object sender, EventArgs e)
+        {
+            if (lsvFileNames.Items.Count <= 1) { return; };
+           
+            frmCompareFiles frmCompare = new frmCompareFiles();
+            frmCompare.Show();
+
         }
 
 

@@ -112,3 +112,4 @@ D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCsvFilesClassification.reso
 D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 D:\cSharp_dataVisu\Thabab\Thabab\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\cSharp_dataVisu\Thabab\Thabab\obj\Debug\Thabab.frmCompareFiles.resources

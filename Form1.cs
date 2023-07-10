@@ -67,8 +67,7 @@ namespace Thabab
             this.dataGridView1.EnableHeadersVisualStyles = false;
 
             this.dataGridView1.RowsDefaultCellStyle.BackColor = Color.Bisque;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor =
-                Color.Beige;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
 
         }
 
@@ -419,6 +418,11 @@ namespace Thabab
                     contextMenu.Show(dataGridView1, dataGridView1.PointToClient(Cursor.Position));
                 }
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
 

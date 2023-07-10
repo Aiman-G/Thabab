@@ -36,6 +36,7 @@ namespace Thabab
         private async void btnGetClassfiedFiles_Click(object sender, EventArgs e)
         {
             frmMultiCsvFiles frmMultiCSV = (frmMultiCsvFiles)Application.OpenForms["frmMultiCsvFiles"];
+            // to retrieve the listview contol that contains files, we first rtreive its container ( the groupbox)
             GroupBox groupBoxCombinationCols = (GroupBox)frmMultiCSV.Controls["groupBoxCombinationCols"];
             System.Windows.Forms.ListView lsvFileNames = (System.Windows.Forms.ListView)groupBoxCombinationCols.Controls["lsvFileNames"];
 

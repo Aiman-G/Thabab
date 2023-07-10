@@ -184,6 +184,8 @@ namespace Thabab
             return distinctColumns;
         }
 
+
+        // get columns list for a csv file, given the file path 
         public List<string> GetCsvColumns(string filePath)
         {
             List<string> columns = new List<string>();
