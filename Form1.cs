@@ -345,7 +345,7 @@ namespace Thabab
         private void Form1_Resize(object sender, EventArgs e)
         {
             dataGridView1.Width = this.Width - 20;
-            dataGridView1.Height = this.Height - (this.Height/8);
+            dataGridView1.Height = this.Height - (this.Height/14);
         }
 
         private void multipleCSVsToolStripMenuItem_Click(object sender, EventArgs e)

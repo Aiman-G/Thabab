@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Globalization;
+using System.IO;
 
 namespace Thabab
 {
@@ -138,6 +139,7 @@ namespace Thabab
 
             var datasource = dataGridViewInstance.DataSource;
             dgvShowFilteredData.DataSource = datasource;
+            dgvShowFilteredData.Refresh();
         }
 
         private void dgvShowFilteredData_DataSourceChanged(object sender, EventArgs e)
@@ -153,10 +155,11 @@ namespace Thabab
             // Show the progress bar
             progressBar1.Visible = true;
             btnUniqueValues.Enabled = false;
+            panel1.Controls.Clear();
 
             // Get the DataGridView instance
-            Form1 frmMain = (Form1)Application.OpenForms["Form1"];
-            DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
+            //Form1 frmMain = (Form1)Application.OpenForms["Form1"];
+            //DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
 
             // Create an instance of Progress<int> to report progress
             Progress<int> progress = new Progress<int>(value =>
@@ -169,7 +172,7 @@ namespace Thabab
             await Task.Run(() =>
             {
                 PopulatingTools popObj = new PopulatingTools();
-                popObj.comboxOfUniquevalues(dataGridViewInstance, panel1, progressBar1);
+                popObj.comboxOfUniquevalues(dgvShowFilteredData, panel1, progressBar1);
             });
 
             // Hide the progress bar when the task is complete
@@ -199,5 +202,97 @@ namespace Thabab
         {
 
         }
+
+        private void btnExportFiltredToMain_Click(object sender, EventArgs e)
+        {
+
+            if (dgvShowFilteredData.Rows.Count == 0) { return; }
+            DataSummarization summeryObject = new DataSummarization();
+
+            Form1 frmMain = (Form1)Application.OpenForms["Form1"];
+            DataGridView dgvAtMainWindw = (DataGridView)frmMain.Controls["dataGridView1"];
+            // Create a new DataTable for the filtered and modified data
+            DataTable filteredData = summeryObject.ConvertDataGridViewToDataTable(dgvShowFilteredData);
+
+
+            dgvAtMainWindw.DataSource = filteredData;
+            
+            frmMain.Show();
+            frmMain.BringToFront();
+        }
+
+        private void btnExportFilteredToCSV_Click(object sender, EventArgs e)
+        {
+            if (dgvShowFilteredData.Rows.Count == 0) { return; }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+
+                StringBuilder sb = new StringBuilder();
+
+                // Header
+                foreach (DataGridViewColumn col in dgvShowFilteredData.Columns)
+                {
+                    sb.Append(col.HeaderText + ",");
+                }
+
+                sb.AppendLine();
+
+                // Rows
+                foreach (DataGridViewRow row in dgvShowFilteredData.Rows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        sb.Append(cell.Value + ",");
+                    }
+                    sb.AppendLine();
+                }
+
+                // Save to file
+                File.WriteAllText(saveFileDialog.FileName, sb.ToString());
+            }
+        }
+
+        private void dgvShowFilteredData_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right && e.RowIndex == -1 && e.ColumnIndex >= 0)
+            {
+                //string rowidx = e.RowIndex.ToString();
+                //string colidx = e.ColumnIndex.ToString();
+                //MessageBox.Show("rowidx:"+ rowidx + "|col index" + colidx);
+
+                DataGridViewCell headerCell = dgvShowFilteredData.Columns[e.ColumnIndex].HeaderCell;
+
+                if (headerCell != null && headerCell.ColumnIndex == e.ColumnIndex)
+                {
+                    dgvShowFilteredData.ClearSelection();
+                    dgvShowFilteredData.Columns[e.ColumnIndex].Selected = true;
+
+                    ContextMenuStrip contextMenu = new ContextMenuStrip();
+                    ToolStripMenuItem deleteColumnMenuItem = new ToolStripMenuItem("Delete Column");
+                    deleteColumnMenuItem.Click += (deleteSender, deleteEventArgs) =>
+                    {
+                        if (e.ColumnIndex >= 0 && e.ColumnIndex < dgvShowFilteredData.Columns.Count)
+                        {
+                            DataGridViewColumn column = dgvShowFilteredData.Columns[e.ColumnIndex];
+                            dgvShowFilteredData.Columns.Remove(column);
+                        }
+                    };
+                    contextMenu.Items.Add(deleteColumnMenuItem);
+
+                    dgvShowFilteredData.ContextMenuStrip = contextMenu;
+                    contextMenu.Show(dgvShowFilteredData, dgvShowFilteredData.PointToClient(Cursor.Position));
+                }
+            }
+        }
+
+
+
+        //-------
     }
 }

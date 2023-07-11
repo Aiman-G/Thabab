@@ -71,6 +71,32 @@ namespace Thabab
         }
 
 
+        public DataTable ConvertDataGridViewToDataTable(DataGridView dataGridView)
+        {
+            DataTable dataTable = new DataTable();
+
+            // Create columns in the DataTable based on the DataGridView columns
+            foreach (DataGridViewColumn dataGridViewColumn in dataGridView.Columns)
+            {
+                dataTable.Columns.Add(dataGridViewColumn.Name, typeof(string));
+            }
+
+            // Iterate over the DataGridView rows and add them to the DataTable
+            foreach (DataGridViewRow dataGridViewRow in dataGridView.Rows)
+            {
+                DataRow dataRow = dataTable.NewRow();
+
+                // Fill the DataRow with the DataGridView cell values
+                foreach (DataGridViewCell dataGridViewCell in dataGridViewRow.Cells)
+                {
+                    dataRow[dataGridViewCell.ColumnIndex] = dataGridViewCell.Value?.ToString();
+                }
+
+                dataTable.Rows.Add(dataRow);
+            }
+
+            return dataTable;
+        }
 
 
 

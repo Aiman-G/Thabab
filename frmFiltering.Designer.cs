@@ -43,6 +43,8 @@ namespace Thabab
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnExportFiltredToMain = new System.Windows.Forms.Button();
+            this.btnExportFilteredToCSV = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShowFilteredData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSummary)).BeginInit();
@@ -141,6 +143,7 @@ namespace Thabab
             this.dgvShowFilteredData.TabIndex = 4;
             this.dgvShowFilteredData.DataSourceChanged += new System.EventHandler(this.dgvShowFilteredData_DataSourceChanged);
             this.dgvShowFilteredData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvShowFilteredData_CellContentClick);
+            this.dgvShowFilteredData.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvShowFilteredData_CellMouseDown);
             // 
             // dgvSummary
             // 
@@ -180,7 +183,7 @@ namespace Thabab
             this.statusStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip2.Location = new System.Drawing.Point(0, 731);
+            this.statusStrip2.Location = new System.Drawing.Point(0, 764);
             this.statusStrip2.Name = "statusStrip2";
             this.statusStrip2.Size = new System.Drawing.Size(1395, 26);
             this.statusStrip2.TabIndex = 11;
@@ -193,11 +196,33 @@ namespace Thabab
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(35, 20);
             this.toolStripStatusLabel1.Text = "Info";
             // 
+            // btnExportFiltredToMain
+            // 
+            this.btnExportFiltredToMain.Location = new System.Drawing.Point(1196, 732);
+            this.btnExportFiltredToMain.Name = "btnExportFiltredToMain";
+            this.btnExportFiltredToMain.Size = new System.Drawing.Size(151, 29);
+            this.btnExportFiltredToMain.TabIndex = 12;
+            this.btnExportFiltredToMain.Text = "Export to main";
+            this.btnExportFiltredToMain.UseVisualStyleBackColor = true;
+            this.btnExportFiltredToMain.Click += new System.EventHandler(this.btnExportFiltredToMain_Click);
+            // 
+            // btnExportFilteredToCSV
+            // 
+            this.btnExportFilteredToCSV.Location = new System.Drawing.Point(1010, 732);
+            this.btnExportFilteredToCSV.Name = "btnExportFilteredToCSV";
+            this.btnExportFilteredToCSV.Size = new System.Drawing.Size(151, 29);
+            this.btnExportFilteredToCSV.TabIndex = 12;
+            this.btnExportFilteredToCSV.Text = "Export to CSV";
+            this.btnExportFilteredToCSV.UseVisualStyleBackColor = true;
+            this.btnExportFilteredToCSV.Click += new System.EventHandler(this.btnExportFilteredToCSV_Click);
+            // 
             // frmFiltering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 757);
+            this.ClientSize = new System.Drawing.Size(1395, 790);
+            this.Controls.Add(this.btnExportFilteredToCSV);
+            this.Controls.Add(this.btnExportFiltredToMain);
             this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dgvShowFilteredData);
@@ -233,5 +258,7 @@ namespace Thabab
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button btnExportFiltredToMain;
+        private System.Windows.Forms.Button btnExportFilteredToCSV;
     }
 }
