@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvFirstFile = new System.Windows.Forms.DataGridView();
             this.file_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSecondFile = new System.Windows.Forms.DataGridView();
@@ -42,6 +42,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabControlComparison = new System.Windows.Forms.TabControl();
             this.tabColumns = new System.Windows.Forms.TabPage();
+            this.btnRefreshColumnsInfo = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,18 +55,17 @@
             this.lsvFirstFile = new System.Windows.Forms.ListView();
             this.lblFirstFileName = new System.Windows.Forms.Label();
             this.tabSummary = new System.Windows.Forms.TabPage();
+            this.btnRefreshSummary = new System.Windows.Forms.Button();
+            this.lblSecondFileNameSummary = new System.Windows.Forms.Label();
+            this.lblFirstFileNameSummary = new System.Windows.Forms.Label();
             this.dgvSecondFileSummary = new System.Windows.Forms.DataGridView();
             this.dgvFirstFileSummary = new System.Windows.Forms.DataGridView();
             this.tabCharts = new System.Windows.Forms.TabPage();
+            this.btnRefreshChart = new System.Windows.Forms.Button();
+            this.lblSecondFileNameChart = new System.Windows.Forms.Label();
+            this.lblFirstFileNameChart = new System.Windows.Forms.Label();
             this.chartSecondFile = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartFirstFile = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.lblFirstFileNameSummary = new System.Windows.Forms.Label();
-            this.lblSecondFileNameSummary = new System.Windows.Forms.Label();
-            this.lblFirstFileNameChart = new System.Windows.Forms.Label();
-            this.lblSecondFileNameChart = new System.Windows.Forms.Label();
-            this.btnRefreshColumnsInfo = new System.Windows.Forms.Button();
-            this.btnRefreshSummary = new System.Windows.Forms.Button();
-            this.btnRefreshChart = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFirstFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSecondFile)).BeginInit();
@@ -91,6 +91,7 @@
             this.file_name});
             this.dgvFirstFile.Location = new System.Drawing.Point(20, 21);
             this.dgvFirstFile.Name = "dgvFirstFile";
+            this.dgvFirstFile.ReadOnly = true;
             this.dgvFirstFile.RowHeadersWidth = 51;
             this.dgvFirstFile.RowTemplate.Height = 24;
             this.dgvFirstFile.Size = new System.Drawing.Size(337, 232);
@@ -102,6 +103,7 @@
             this.file_name.HeaderText = "File Name";
             this.file_name.MinimumWidth = 6;
             this.file_name.Name = "file_name";
+            this.file_name.ReadOnly = true;
             this.file_name.Width = 125;
             // 
             // dgvSecondFile
@@ -111,6 +113,7 @@
             this.dataGridViewTextBoxColumn1});
             this.dgvSecondFile.Location = new System.Drawing.Point(18, 21);
             this.dgvSecondFile.Name = "dgvSecondFile";
+            this.dgvSecondFile.ReadOnly = true;
             this.dgvSecondFile.RowHeadersWidth = 51;
             this.dgvSecondFile.RowTemplate.Height = 24;
             this.dgvSecondFile.Size = new System.Drawing.Size(342, 222);
@@ -122,6 +125,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "File Name";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // groupBox1
@@ -174,6 +178,16 @@
             this.tabColumns.TabIndex = 0;
             this.tabColumns.Text = "Columns";
             this.tabColumns.UseVisualStyleBackColor = true;
+            // 
+            // btnRefreshColumnsInfo
+            // 
+            this.btnRefreshColumnsInfo.Location = new System.Drawing.Point(630, 6);
+            this.btnRefreshColumnsInfo.Name = "btnRefreshColumnsInfo";
+            this.btnRefreshColumnsInfo.Size = new System.Drawing.Size(107, 39);
+            this.btnRefreshColumnsInfo.TabIndex = 5;
+            this.btnRefreshColumnsInfo.Text = "Refresh";
+            this.btnRefreshColumnsInfo.UseVisualStyleBackColor = true;
+            this.btnRefreshColumnsInfo.Click += new System.EventHandler(this.btnRefreshColumnsInfo_Click);
             // 
             // groupBox4
             // 
@@ -308,6 +322,36 @@
             this.tabSummary.Text = "Summary ";
             this.tabSummary.UseVisualStyleBackColor = true;
             // 
+            // btnRefreshSummary
+            // 
+            this.btnRefreshSummary.Location = new System.Drawing.Point(616, 6);
+            this.btnRefreshSummary.Name = "btnRefreshSummary";
+            this.btnRefreshSummary.Size = new System.Drawing.Size(107, 43);
+            this.btnRefreshSummary.TabIndex = 8;
+            this.btnRefreshSummary.Text = "Refresh";
+            this.btnRefreshSummary.UseVisualStyleBackColor = true;
+            this.btnRefreshSummary.Click += new System.EventHandler(this.btnRefreshSummary_Click);
+            // 
+            // lblSecondFileNameSummary
+            // 
+            this.lblSecondFileNameSummary.AutoSize = true;
+            this.lblSecondFileNameSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSecondFileNameSummary.Location = new System.Drawing.Point(854, 32);
+            this.lblSecondFileNameSummary.Name = "lblSecondFileNameSummary";
+            this.lblSecondFileNameSummary.Size = new System.Drawing.Size(78, 18);
+            this.lblSecondFileNameSummary.TabIndex = 7;
+            this.lblSecondFileNameSummary.Text = "File 2 name";
+            // 
+            // lblFirstFileNameSummary
+            // 
+            this.lblFirstFileNameSummary.AutoSize = true;
+            this.lblFirstFileNameSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFirstFileNameSummary.Location = new System.Drawing.Point(170, 32);
+            this.lblFirstFileNameSummary.Name = "lblFirstFileNameSummary";
+            this.lblFirstFileNameSummary.Size = new System.Drawing.Size(78, 18);
+            this.lblFirstFileNameSummary.TabIndex = 7;
+            this.lblFirstFileNameSummary.Text = "File 1 name";
+            // 
             // dgvSecondFileSummary
             // 
             this.dgvSecondFileSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -342,68 +386,15 @@
             this.tabCharts.Text = "Charts";
             this.tabCharts.UseVisualStyleBackColor = true;
             // 
-            // chartSecondFile
+            // btnRefreshChart
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chartSecondFile.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chartSecondFile.Legends.Add(legend9);
-            this.chartSecondFile.Location = new System.Drawing.Point(818, 36);
-            this.chartSecondFile.Name = "chartSecondFile";
-            series9.ChartArea = "ChartArea1";
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chartSecondFile.Series.Add(series9);
-            this.chartSecondFile.Size = new System.Drawing.Size(480, 300);
-            this.chartSecondFile.TabIndex = 1;
-            this.chartSecondFile.Text = "chart2";
-            // 
-            // chartFirstFile
-            // 
-            chartArea10.Name = "ChartArea1";
-            this.chartFirstFile.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.chartFirstFile.Legends.Add(legend10);
-            this.chartFirstFile.Location = new System.Drawing.Point(45, 36);
-            this.chartFirstFile.Name = "chartFirstFile";
-            this.chartFirstFile.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.chartFirstFile.Series.Add(series10);
-            this.chartFirstFile.Size = new System.Drawing.Size(458, 300);
-            this.chartFirstFile.TabIndex = 0;
-            this.chartFirstFile.Text = "chart1";
-            // 
-            // lblFirstFileNameSummary
-            // 
-            this.lblFirstFileNameSummary.AutoSize = true;
-            this.lblFirstFileNameSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFirstFileNameSummary.Location = new System.Drawing.Point(170, 32);
-            this.lblFirstFileNameSummary.Name = "lblFirstFileNameSummary";
-            this.lblFirstFileNameSummary.Size = new System.Drawing.Size(78, 18);
-            this.lblFirstFileNameSummary.TabIndex = 7;
-            this.lblFirstFileNameSummary.Text = "File 1 name";
-            // 
-            // lblSecondFileNameSummary
-            // 
-            this.lblSecondFileNameSummary.AutoSize = true;
-            this.lblSecondFileNameSummary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSecondFileNameSummary.Location = new System.Drawing.Point(854, 32);
-            this.lblSecondFileNameSummary.Name = "lblSecondFileNameSummary";
-            this.lblSecondFileNameSummary.Size = new System.Drawing.Size(78, 18);
-            this.lblSecondFileNameSummary.TabIndex = 7;
-            this.lblSecondFileNameSummary.Text = "File 2 name";
-            // 
-            // lblFirstFileNameChart
-            // 
-            this.lblFirstFileNameChart.AutoSize = true;
-            this.lblFirstFileNameChart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFirstFileNameChart.Location = new System.Drawing.Point(93, 15);
-            this.lblFirstFileNameChart.Name = "lblFirstFileNameChart";
-            this.lblFirstFileNameChart.Size = new System.Drawing.Size(78, 18);
-            this.lblFirstFileNameChart.TabIndex = 7;
-            this.lblFirstFileNameChart.Text = "File 1 name";
+            this.btnRefreshChart.Location = new System.Drawing.Point(610, 6);
+            this.btnRefreshChart.Name = "btnRefreshChart";
+            this.btnRefreshChart.Size = new System.Drawing.Size(97, 35);
+            this.btnRefreshChart.TabIndex = 8;
+            this.btnRefreshChart.Text = "Refresh";
+            this.btnRefreshChart.UseVisualStyleBackColor = true;
+            this.btnRefreshChart.Click += new System.EventHandler(this.btnRefreshChart_Click);
             // 
             // lblSecondFileNameChart
             // 
@@ -415,35 +406,48 @@
             this.lblSecondFileNameChart.TabIndex = 7;
             this.lblSecondFileNameChart.Text = "File 2 name";
             // 
-            // btnRefreshColumnsInfo
+            // lblFirstFileNameChart
             // 
-            this.btnRefreshColumnsInfo.Location = new System.Drawing.Point(630, 6);
-            this.btnRefreshColumnsInfo.Name = "btnRefreshColumnsInfo";
-            this.btnRefreshColumnsInfo.Size = new System.Drawing.Size(107, 39);
-            this.btnRefreshColumnsInfo.TabIndex = 5;
-            this.btnRefreshColumnsInfo.Text = "Refresh";
-            this.btnRefreshColumnsInfo.UseVisualStyleBackColor = true;
-            this.btnRefreshColumnsInfo.Click += new System.EventHandler(this.btnRefreshColumnsInfo_Click);
+            this.lblFirstFileNameChart.AutoSize = true;
+            this.lblFirstFileNameChart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFirstFileNameChart.Location = new System.Drawing.Point(93, 15);
+            this.lblFirstFileNameChart.Name = "lblFirstFileNameChart";
+            this.lblFirstFileNameChart.Size = new System.Drawing.Size(78, 18);
+            this.lblFirstFileNameChart.TabIndex = 7;
+            this.lblFirstFileNameChart.Text = "File 1 name";
             // 
-            // btnRefreshSummary
+            // chartSecondFile
             // 
-            this.btnRefreshSummary.Location = new System.Drawing.Point(616, 6);
-            this.btnRefreshSummary.Name = "btnRefreshSummary";
-            this.btnRefreshSummary.Size = new System.Drawing.Size(107, 43);
-            this.btnRefreshSummary.TabIndex = 8;
-            this.btnRefreshSummary.Text = "Refresh";
-            this.btnRefreshSummary.UseVisualStyleBackColor = true;
-            this.btnRefreshSummary.Click += new System.EventHandler(this.btnRefreshSummary_Click);
+            chartArea1.Name = "ChartArea1";
+            this.chartSecondFile.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartSecondFile.Legends.Add(legend1);
+            this.chartSecondFile.Location = new System.Drawing.Point(818, 36);
+            this.chartSecondFile.Name = "chartSecondFile";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartSecondFile.Series.Add(series1);
+            this.chartSecondFile.Size = new System.Drawing.Size(480, 300);
+            this.chartSecondFile.TabIndex = 1;
+            this.chartSecondFile.Text = "chart2";
             // 
-            // btnRefreshChart
+            // chartFirstFile
             // 
-            this.btnRefreshChart.Location = new System.Drawing.Point(610, 6);
-            this.btnRefreshChart.Name = "btnRefreshChart";
-            this.btnRefreshChart.Size = new System.Drawing.Size(97, 35);
-            this.btnRefreshChart.TabIndex = 8;
-            this.btnRefreshChart.Text = "Refresh";
-            this.btnRefreshChart.UseVisualStyleBackColor = true;
-            this.btnRefreshChart.Click += new System.EventHandler(this.btnRefreshChart_Click);
+            chartArea2.Name = "ChartArea1";
+            this.chartFirstFile.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartFirstFile.Legends.Add(legend2);
+            this.chartFirstFile.Location = new System.Drawing.Point(45, 36);
+            this.chartFirstFile.Name = "chartFirstFile";
+            this.chartFirstFile.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartFirstFile.Series.Add(series2);
+            this.chartFirstFile.Size = new System.Drawing.Size(458, 300);
+            this.chartFirstFile.TabIndex = 0;
+            this.chartFirstFile.Text = "chart1";
             // 
             // progressBar1
             // 

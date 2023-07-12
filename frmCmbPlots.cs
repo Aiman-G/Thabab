@@ -52,6 +52,7 @@ namespace Thabab
 
         private void btnUniqueValues_Click(object sender, EventArgs e)
         {
+
             Cursor = Cursors.WaitCursor;
             // Show the progress bar
             progressBar1.Visible = true;
