@@ -275,7 +275,7 @@ namespace Thabab
             }
         }
 
-        private void btnShowSummary_Click_1(object sender, EventArgs e)
+        private void btnShowSummary_Click(object sender, EventArgs e)
         {
 
             if (dgvShowFilteredData.RowCount == 0)

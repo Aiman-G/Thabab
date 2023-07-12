@@ -164,7 +164,7 @@ namespace Thabab
             this.btnShowSummary.TabIndex = 8;
             this.btnShowSummary.Text = "Show";
             this.btnShowSummary.UseVisualStyleBackColor = true;
-            this.btnShowSummary.Click += new System.EventHandler(this.btnShowSummary_Click_1);
+            this.btnShowSummary.Click += new System.EventHandler(this.btnShowSummary_Click);
             // 
             // groupBox2
             // 
