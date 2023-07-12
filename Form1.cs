@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -10,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using luminous;
 using MathNet.Numerics.Statistics;
+using OxyPlot;
+
 namespace Thabab
 
 {
@@ -211,7 +214,7 @@ namespace Thabab
         private void queryToolStripMenuItem_Click(object sender, EventArgs e)
 
         {
-
+            Cursor = Cursors.WaitCursor;
 
             var xx = dpObject.AreValuesSurroundedByQuotes(dataGridView1);
             if (xx)
@@ -226,6 +229,7 @@ namespace Thabab
             }
             frmFiltering frmquery = new frmFiltering();
             frmquery.Show();
+            Cursor = Cursors.Default;
         }
 
         private void plotToolStripMenuItem_Click(object sender, EventArgs e)
@@ -403,7 +407,10 @@ namespace Thabab
                     dataGridView1.Columns[e.ColumnIndex].Selected = true;
 
                     ContextMenuStrip contextMenu = new ContextMenuStrip();
-                    ToolStripMenuItem deleteColumnMenuItem = new ToolStripMenuItem("Delete Column");
+                    // Create a ToolStripMenuItem with the column name for deletion
+                   string columnName = headerCell.Value.ToString();
+                   ToolStripMenuItem deleteColumnMenuItem = new ToolStripMenuItem("Delete " + columnName);
+
                     deleteColumnMenuItem.Click += (deleteSender, deleteEventArgs) =>
                     {
                         if (e.ColumnIndex >= 0 && e.ColumnIndex < dataGridView1.Columns.Count)

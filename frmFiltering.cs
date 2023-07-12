@@ -152,8 +152,7 @@ namespace Thabab
 
         private async void btnUniqueValues_Click(object sender, EventArgs e)
         {
-            // Show the progress bar
-            progressBar1.Visible = true;
+            Cursor = Cursors.WaitCursor;
             btnUniqueValues.Enabled = false;
             panel1.Controls.Clear();
 
@@ -161,22 +160,16 @@ namespace Thabab
             //Form1 frmMain = (Form1)Application.OpenForms["Form1"];
             //DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
 
-            // Create an instance of Progress<int> to report progress
-            Progress<int> progress = new Progress<int>(value =>
-            {
-                // Update the progress bar value
-                progressBar1.Value = value;
-            });
+            
 
             // Perform the operation asynchronously
             await Task.Run(() =>
             {
                 PopulatingTools popObj = new PopulatingTools();
-                popObj.comboxOfUniquevalues(dgvShowFilteredData, panel1, progressBar1);
+                popObj.comboxOfUniquevalues(dgvShowFilteredData, panel1);
             });
 
-            // Hide the progress bar when the task is complete
-            progressBar1.Visible = false;
+            Cursor= Cursors.Default;
             btnUniqueValues.Enabled = true;
 
 

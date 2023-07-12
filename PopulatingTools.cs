@@ -19,8 +19,10 @@ namespace Thabab
     {
         // adding comboxes with unique values of datagridview to a panel
 
-        public void comboxOfUniquevalues(DataGridView dgv, Panel pnl, ProgressBar pbr)
-        {   // some times the column names are big, and the labels cannot show the full name, so the name can be shown as a tooltip
+
+        public void comboxOfUniquevalues(DataGridView dgv, Panel pnl)
+        {
+            // some times the column names are big, and the labels cannot show the full name, so the name can be shown as a tooltip
             ToolTip tltip = new ToolTip();
 
             try
@@ -64,33 +66,20 @@ namespace Thabab
                     // Add the values to the combobox
                     comboBox.Items.AddRange(values);
 
-                    //show the first element instead showing empty combo
-                    //comboBox.SelectedIndex = 0;
-
                     // Update the UI on the main thread
                     pnl.Invoke((MethodInvoker)delegate
                     {
                         pnl.Controls.Add(comboBox);
-                    });
-
-                    // Calculate progress percentage
-                    int progressPercentage = (i + 1) * 100 / dgv.Columns.Count;
-
-                    // Update the progress bar on the main thread
-                    pbr.Invoke((MethodInvoker)delegate
-                    {
-                        pbr.Value = progressPercentage;
                     });
                 }
             }
             catch (Exception ex)
             {
                 // Handle any exceptions that are thrown by the function
-                MessageBox.Show("Make sure that : your CSV file is in the correct format, you have enough data.. : " + ex.Message);
+                MessageBox.Show("Make sure that your CSV file is in the correct format and you have enough data: " + ex.Message);
             }
-
-
         }
+
 
 
         public void PopulateCombBox(DataGridView dgv, ComboBox cmb)

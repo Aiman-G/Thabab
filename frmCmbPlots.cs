@@ -38,15 +38,27 @@ namespace Thabab
             cmb_y_col.SelectedIndex = 0;
             cmb_x_col.SelectedIndex = 0;
 
+            this.dgvShowFilteredData.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkOrange;
+
+            // If you do not set the EnableHeadersVisualStyles flag to False,
+            // then the changes of backcolor you make to the style of the header will not take effect
+            this.dgvShowFilteredData.EnableHeadersVisualStyles = false;
+
+            this.dgvShowFilteredData.RowsDefaultCellStyle.BackColor = Color.Bisque;
+            this.dgvShowFilteredData.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
+
+
         }
 
         private void btnUniqueValues_Click(object sender, EventArgs e)
         {
+            Cursor = Cursors.WaitCursor;
             // Show the progress bar
             progressBar1.Visible = true;
 
             // Start the background worker
             backgroundWorker1.RunWorkerAsync();
+            Cursor = Cursors.Default;
 
         }
 
@@ -56,7 +68,7 @@ namespace Thabab
             DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
             
             PopulatingTools popObj = new PopulatingTools();
-            popObj.comboxOfUniquevalues(dataGridViewInstance, panel1,null );
+            popObj.comboxOfUniquevalues(dataGridViewInstance, panel1 );
        
 
                   }
