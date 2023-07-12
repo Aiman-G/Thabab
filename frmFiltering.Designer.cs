@@ -39,7 +39,7 @@ namespace Thabab
             this.btnClearSelections = new System.Windows.Forms.Button();
             this.dgvShowFilteredData = new System.Windows.Forms.DataGridView();
             this.dgvSummary = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnShowSummary = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.statusStrip2 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -156,19 +156,19 @@ namespace Thabab
             this.dgvSummary.Size = new System.Drawing.Size(699, 309);
             this.dgvSummary.TabIndex = 7;
             // 
-            // button1
+            // btnShowSummary
             // 
-            this.button1.Location = new System.Drawing.Point(30, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 42);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Show";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnShowSummary.Location = new System.Drawing.Point(30, 15);
+            this.btnShowSummary.Name = "btnShowSummary";
+            this.btnShowSummary.Size = new System.Drawing.Size(112, 42);
+            this.btnShowSummary.TabIndex = 8;
+            this.btnShowSummary.Text = "Show";
+            this.btnShowSummary.UseVisualStyleBackColor = true;
+            this.btnShowSummary.Click += new System.EventHandler(this.btnShowSummary_Click_1);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnShowSummary);
             this.groupBox2.Controls.Add(this.dgvSummary);
             this.groupBox2.Location = new System.Drawing.Point(648, 22);
             this.groupBox2.Name = "groupBox2";
@@ -254,7 +254,7 @@ namespace Thabab
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvShowFilteredData;
         private System.Windows.Forms.DataGridView dgvSummary;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnShowSummary;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.StatusStrip statusStrip2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;

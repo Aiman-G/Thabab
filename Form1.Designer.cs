@@ -138,7 +138,7 @@ namespace Thabab
             // 
             this.toolStripMenuPlotCategorical.Image = global::Thabab.Properties.Resources.Plot_categories;
             this.toolStripMenuPlotCategorical.Name = "toolStripMenuPlotCategorical";
-            this.toolStripMenuPlotCategorical.Size = new System.Drawing.Size(214, 26);
+            this.toolStripMenuPlotCategorical.Size = new System.Drawing.Size(229, 32);
             this.toolStripMenuPlotCategorical.Text = "Plot Categorical ";
             this.toolStripMenuPlotCategorical.Click += new System.EventHandler(this.toolStripMenuPlotCategorical_Click);
             // 
@@ -146,7 +146,7 @@ namespace Thabab
             // 
             this.toolStripPlotCombinations.Image = global::Thabab.Properties.Resources.Plot_combinaion;
             this.toolStripPlotCombinations.Name = "toolStripPlotCombinations";
-            this.toolStripPlotCombinations.Size = new System.Drawing.Size(214, 26);
+            this.toolStripPlotCombinations.Size = new System.Drawing.Size(229, 32);
             this.toolStripPlotCombinations.Text = "Plot Combinations";
             this.toolStripPlotCombinations.Click += new System.EventHandler(this.toolStripPlotCombinations_Click);
             // 

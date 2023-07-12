@@ -175,18 +175,7 @@ namespace Thabab
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (dgvShowFilteredData.RowCount == 0)
-            {
-                return;
-            }
-            Cursor = Cursors.WaitCursor;
-            DataSummarization dataSmrObject = new DataSummarization();
-
-            dataSmrObject.SummarizeDataGridView(dgvShowFilteredData, dgvSummary);
-            Cursor = Cursors.Default;
-        }
+       
 
         private void dgvShowFilteredData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -284,6 +273,22 @@ namespace Thabab
                     contextMenu.Show(dgvShowFilteredData, dgvShowFilteredData.PointToClient(Cursor.Position));
                 }
             }
+        }
+
+        private void btnShowSummary_Click_1(object sender, EventArgs e)
+        {
+
+            if (dgvShowFilteredData.RowCount == 0)
+            {
+                return;
+            }
+
+            Cursor = Cursors.WaitCursor;
+            DataSummarization dataSmrObject = new DataSummarization();
+
+            dataSmrObject.SummarizeDataGridView(dgvShowFilteredData, dgvSummary);
+            Cursor = Cursors.Default;
+
         }
 
 

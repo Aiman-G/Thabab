@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Markup;
 using luminous;
 using MathNet.Numerics.Statistics;
 using OxyPlot;
@@ -187,9 +188,10 @@ namespace Thabab
 
         private void toolStripPlotCombinations_Click(object sender, EventArgs e)
         {
-
-            var xx = dpObject.AreValuesSurroundedByQuotes(dataGridView1);
-            if (xx)
+            Cursor = Cursors.WaitCursor;
+            // some csv files arn't standard, and the values of strings are in quotes, this could cause a problem
+            var quotedValues = dpObject.AreValuesSurroundedByQuotes(dataGridView1);
+            if (quotedValues)
              {
                 MessageBox.Show("Data is not ready, remove the quoates from the processig menue", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -205,7 +207,7 @@ namespace Thabab
 
             frmCmbPlots frmcombplot = new frmCmbPlots();
             frmcombplot.Show();
-
+            Cursor = Cursors.Default;
 
 
         }
