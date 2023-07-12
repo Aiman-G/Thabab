@@ -181,9 +181,11 @@ namespace Thabab
             {
                 return;
             }
+            Cursor = Cursors.WaitCursor;
             DataSummarization dataSmrObject = new DataSummarization();
 
             dataSmrObject.SummarizeDataGridView(dgvShowFilteredData, dgvSummary);
+            Cursor = Cursors.Default;
         }
 
         private void dgvShowFilteredData_CellContentClick(object sender, DataGridViewCellEventArgs e)
