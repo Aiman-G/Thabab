@@ -121,40 +121,42 @@ namespace Thabab
 
         }
 
-       
-        
-                              
-
-        
 
 
-        
+
+
+
+
+
 
         private void loadCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-
             // Show the Open File dialog.
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "CSV Files (*.csv)|*.csv";
             openFileDialog1.Title = "Select a CSV File";
-            
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                string filePath = openFileDialog1.FileName;
-                DataTable dt = popTools.ReadCsvFile(filePath);  
+                // Clear the current data in the DataTable
+                if (dataGridView1.DataSource is DataTable dataTable)
+                {
+                    dataTable.Clear();
+                    dataTable.Columns.Clear();
+                }
 
+                string filePath = openFileDialog1.FileName;
+                DataTable newDataTable = popTools.ReadCsvFile(filePath);
 
                 // Set the DataTable as the DataSource of the DataGridView.
-                dataGridView1.DataSource = dt;
+                dataGridView1.DataSource = newDataTable;
 
                 // Populate the ListBox with the column names.
                 PopulateListBoxs();
             }
         }
 
-        
-       
+
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {

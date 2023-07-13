@@ -24,11 +24,14 @@ namespace Thabab
 
         private void frmCmbPlots_Load(object sender, EventArgs e)
         {
+            DataSummarization dataSummarization = new DataSummarization();
+
             Form1 frmMain = (Form1)Application.OpenForms["Form1"];
             DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
+            DataTable dt = dataSummarization.ConvertDataGridViewToDataTable(dataGridViewInstance);
 
-            var datasource = dataGridViewInstance.DataSource;
-            dgvShowFilteredData.DataSource = datasource;
+            //var datasource = dataGridViewInstance.DataSource;
+            dgvShowFilteredData.DataSource = dt;
 
             PopulatingTools PopCmb = new PopulatingTools();
             PopCmb.PopulateCombBox(dgvShowFilteredData, cmb_x_col);
@@ -52,38 +55,18 @@ namespace Thabab
 
         private void btnUniqueValues_Click(object sender, EventArgs e)
         {
-
             Cursor = Cursors.WaitCursor;
-            // Show the progress bar
-            progressBar1.Visible = true;
 
-            // Start the background worker
-            backgroundWorker1.RunWorkerAsync();
-            Cursor = Cursors.Default;
-
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
             Form1 frmMain = (Form1)Application.OpenForms["Form1"];
             DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
-            
+
             PopulatingTools popObj = new PopulatingTools();
-            popObj.comboxOfUniquevalues(dataGridViewInstance, panel1 );
-       
+            popObj.comboxOfUniquevalues(dataGridViewInstance, panel1);
 
-                  }
 
-        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            // Update the progress bar
-            progressBar1.Value = e.ProgressPercentage;
-        }
+            Cursor = Cursors.Default;
 
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            // Hide the progress bar when the task is complete
-            progressBar1.Visible = false;
+
         }
 
 
@@ -214,10 +197,14 @@ namespace Thabab
 
                 { Ploting pltObj = new Ploting();
 
+                    Cursor = Cursors.WaitCursor;
+
                     cat_Col = cmb_cat_var.SelectedItem.ToString();
                     X_Col = cmb_x_col.SelectedItem.ToString();
                     Y_Col = cmb_y_col.SelectedItem.ToString();
                     pltTwo.PlotDataByCategory(dgvShowFilteredData, cat_Col, X_Col, Y_Col);
+
+                    Cursor = Cursors.Default;
                 }
 
 
