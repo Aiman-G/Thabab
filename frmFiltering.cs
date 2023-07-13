@@ -21,12 +21,15 @@ namespace Thabab
         }
 
         private void frmFiltering_Load(object sender, EventArgs e)
-        {
+        {   
+            DataSummarization dataSummarization = new DataSummarization();
+
             Form1 frmMain = (Form1)Application.OpenForms["Form1"];
             DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
+            DataTable dt = dataSummarization.ConvertDataGridViewToDataTable(dataGridViewInstance);
 
-            var datasource = dataGridViewInstance.DataSource;
-            dgvShowFilteredData.DataSource = datasource;
+            //var datasource = dataGridViewInstance.DataSource;
+            dgvShowFilteredData.DataSource = dt;
 
             this.dgvShowFilteredData.RowsDefaultCellStyle.BackColor = Color.Bisque;
             this.dgvShowFilteredData.AlternatingRowsDefaultCellStyle.BackColor = Color.Beige;
@@ -258,7 +261,10 @@ namespace Thabab
                     dgvShowFilteredData.Columns[e.ColumnIndex].Selected = true;
 
                     ContextMenuStrip contextMenu = new ContextMenuStrip();
-                    ToolStripMenuItem deleteColumnMenuItem = new ToolStripMenuItem("Delete Column");
+                    // Create a ToolStripMenuItem with the column name for deletion
+                    string columnName = headerCell.Value.ToString();
+                    ToolStripMenuItem deleteColumnMenuItem = new ToolStripMenuItem("Delete " + columnName);
+
                     deleteColumnMenuItem.Click += (deleteSender, deleteEventArgs) =>
                     {
                         if (e.ColumnIndex >= 0 && e.ColumnIndex < dgvShowFilteredData.Columns.Count)

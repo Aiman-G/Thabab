@@ -265,16 +265,22 @@ namespace Thabab
 
         private void exportToCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count == 0) { return; }
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+                return;
+            }
+
+           
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
             saveFileDialog.RestoreDirectory = true;
 
+            Cursor = Cursors.WaitCursor;
+
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                
-
                 StringBuilder sb = new StringBuilder();
 
                 // Header
@@ -282,7 +288,7 @@ namespace Thabab
                 {
                     sb.Append(col.HeaderText + ",");
                 }
-
+                sb.Length--; // Remove the trailing comma
                 sb.AppendLine();
 
                 // Rows
@@ -292,11 +298,14 @@ namespace Thabab
                     {
                         sb.Append(cell.Value + ",");
                     }
+                    sb.Length--; // Remove the trailing comma
                     sb.AppendLine();
                 }
 
                 // Save to file
                 File.WriteAllText(saveFileDialog.FileName, sb.ToString());
+
+                Cursor = Cursors.Default;   
             }
         }
 
