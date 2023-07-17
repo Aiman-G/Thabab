@@ -267,49 +267,54 @@ namespace Thabab
 
         private void exportToCSVToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            if (dataGridView1.Rows.Count == 0)
+            try
             {
-                return;
-            }
-
-           
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
-            saveFileDialog.RestoreDirectory = true;
-
-            Cursor = Cursors.WaitCursor;
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                StringBuilder sb = new StringBuilder();
-
-                // Header
-                foreach (DataGridViewColumn col in dataGridView1.Columns)
+                if (dataGridView1.Rows.Count == 0)
                 {
-                    sb.Append(col.HeaderText + ",");
+                    return;
                 }
-                sb.Length--; // Remove the trailing comma
-                sb.AppendLine();
 
-                // Rows
-                foreach (DataGridViewRow row in dataGridView1.Rows)
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "CSV files (*.csv)|*.csv";
+                saveFileDialog.RestoreDirectory = true;
+
+                Cursor = Cursors.WaitCursor;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (DataGridViewCell cell in row.Cells)
+                    StringBuilder sb = new StringBuilder();
+
+                    // Header
+                    foreach (DataGridViewColumn col in dataGridView1.Columns)
                     {
-                        sb.Append(cell.Value + ",");
+                        sb.Append(col.HeaderText + ",");
                     }
                     sb.Length--; // Remove the trailing comma
                     sb.AppendLine();
+
+                    // Rows
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            sb.Append(cell.Value + ",");
+                        }
+                        sb.Length--; // Remove the trailing comma
+                        sb.AppendLine();
+                    }
+
+                    // Save to file
+                    File.WriteAllText(saveFileDialog.FileName, sb.ToString());
+
+                    Cursor = Cursors.Default;
                 }
-
-                // Save to file
-                File.WriteAllText(saveFileDialog.FileName, sb.ToString());
-
-                Cursor = Cursors.Default;   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while exporting to CSV: " + ex.Message);
             }
         }
+
 
         private void RemoveQuotes_StripMenuItem_Click(object sender, EventArgs e)
         {
