@@ -86,6 +86,7 @@ namespace Thabab
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(623, 32);
             this.progressBar1.TabIndex = 3;
+            this.progressBar1.Visible = false;
             // 
             // btnLoadUnfilterd
             // 
@@ -133,6 +134,7 @@ namespace Thabab
             // 
             this.dgvShowFilteredData.AllowUserToAddRows = false;
             this.dgvShowFilteredData.AllowUserToDeleteRows = false;
+            this.dgvShowFilteredData.AllowUserToOrderColumns = true;
             this.dgvShowFilteredData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvShowFilteredData.Location = new System.Drawing.Point(12, 407);
             this.dgvShowFilteredData.Name = "dgvShowFilteredData";
