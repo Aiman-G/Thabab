@@ -32,7 +32,6 @@ namespace Thabab
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFiltering));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnLoadUnfilterd = new System.Windows.Forms.Button();
             this.btnUniqueValues = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,7 +54,6 @@ namespace Thabab
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnFilter);
-            this.groupBox1.Controls.Add(this.progressBar1);
             this.groupBox1.Controls.Add(this.btnLoadUnfilterd);
             this.groupBox1.Controls.Add(this.btnUniqueValues);
             this.groupBox1.Controls.Add(this.panel1);
@@ -71,7 +69,7 @@ namespace Thabab
             // btnFilter
             // 
             this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnFilter.Location = new System.Drawing.Point(4, 106);
+            this.btnFilter.Location = new System.Drawing.Point(6, 121);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(194, 71);
             this.btnFilter.TabIndex = 3;
@@ -79,19 +77,10 @@ namespace Thabab
             this.btnFilter.UseVisualStyleBackColor = true;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
-            // progressBar1
-            // 
-            this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.progressBar1.Location = new System.Drawing.Point(6, 340);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(623, 32);
-            this.progressBar1.TabIndex = 3;
-            this.progressBar1.Visible = false;
-            // 
             // btnLoadUnfilterd
             // 
             this.btnLoadUnfilterd.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
-            this.btnLoadUnfilterd.Location = new System.Drawing.Point(6, 274);
+            this.btnLoadUnfilterd.Location = new System.Drawing.Point(6, 303);
             this.btnLoadUnfilterd.Name = "btnLoadUnfilterd";
             this.btnLoadUnfilterd.Size = new System.Drawing.Size(194, 60);
             this.btnLoadUnfilterd.TabIndex = 5;
@@ -116,7 +105,7 @@ namespace Thabab
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Location = new System.Drawing.Point(206, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(402, 319);
+            this.panel1.Size = new System.Drawing.Size(402, 357);
             this.panel1.TabIndex = 1;
             // 
             // btnClearSelections
@@ -250,7 +239,6 @@ namespace Thabab
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnLoadUnfilterd;
         private System.Windows.Forms.Button btnClearSelections;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button btnFilter;
         private System.Windows.Forms.Button btnUniqueValues;
         private System.Windows.Forms.Panel panel1;
