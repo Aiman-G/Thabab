@@ -48,6 +48,7 @@ namespace Thabab
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.MainFormhelpProvider = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -138,7 +139,7 @@ namespace Thabab
             // 
             this.toolStripMenuPlotCategorical.Image = global::Thabab.Properties.Resources.Plot_categories;
             this.toolStripMenuPlotCategorical.Name = "toolStripMenuPlotCategorical";
-            this.toolStripMenuPlotCategorical.Size = new System.Drawing.Size(229, 32);
+            this.toolStripMenuPlotCategorical.Size = new System.Drawing.Size(214, 26);
             this.toolStripMenuPlotCategorical.Text = "Plot Categorical ";
             this.toolStripMenuPlotCategorical.Click += new System.EventHandler(this.toolStripMenuPlotCategorical_Click);
             // 
@@ -146,7 +147,7 @@ namespace Thabab
             // 
             this.toolStripPlotCombinations.Image = global::Thabab.Properties.Resources.Plot_combinaion;
             this.toolStripPlotCombinations.Name = "toolStripPlotCombinations";
-            this.toolStripPlotCombinations.Size = new System.Drawing.Size(229, 32);
+            this.toolStripPlotCombinations.Size = new System.Drawing.Size(214, 26);
             this.toolStripPlotCombinations.Text = "Plot Combinations";
             this.toolStripPlotCombinations.Click += new System.EventHandler(this.toolStripPlotCombinations_Click);
             // 
@@ -235,13 +236,14 @@ namespace Thabab
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Thabab";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Resize += new System.EventHandler(this.Form1_Resize);
+            //this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -271,6 +273,7 @@ namespace Thabab
         private System.Windows.Forms.ToolStripMenuItem Normalize_tripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SetFlaotingPoint_tripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem multipleCSVsToolStripMenuItem;
+        private System.Windows.Forms.HelpProvider MainFormhelpProvider;
     }
 }
 

@@ -27,8 +27,9 @@ namespace Thabab
         {
             Form1 frmMain = (Form1)Application.OpenForms["Form1"];
             DataGridView dataGridViewInstance = (DataGridView)frmMain.Controls["dataGridView1"];
-
+            progressBar1.Visible = true;
             dpObject.SetFloatingPoingPrecision(dataGridViewInstance, progressBar1, numericUpDown1);
+            progressBar1.Visible = false;
         }
     }
 }

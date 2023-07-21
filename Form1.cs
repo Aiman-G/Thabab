@@ -62,6 +62,12 @@ namespace Thabab
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+        
+            MainFormhelpProvider.SetHelpString(dataGridView1, "To delet a column right click and the column. You can move a column by click and hold" +
+                "then move it. You can delete a row by selecting it and click delete from the keyboard. " +
+                "You can chose more than a row by holding the ctrl key" +
+                "key and use the mouse to choose the rows. If you want to choose multiple neighboring rows, no need to hold the ctrl key ");
             //LstBox_cat_columns.Visible = false;
             //LstBoxTimeFlux.Visible = false;
             this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.DarkOrange;
@@ -168,8 +174,8 @@ namespace Thabab
         private void toolStripMenuPlotCategorical_Click(object sender, EventArgs e)
         {
 
-            var xx = dpObject.AreValuesSurroundedByQuotes(dataGridView1);
-            if (xx)
+            var AreThereQuotes = dpObject.AreValuesSurroundedByQuotes(dataGridView1);
+            if (AreThereQuotes)
             {
                 MessageBox.Show("Data is not ready, remove the quoates from the processig menue", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -363,11 +369,12 @@ namespace Thabab
             frmSetFloatinPoint.Show();
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
-        {
-            dataGridView1.Width = this.Width - 20;
-            dataGridView1.Height = this.Height - (this.Height/14);
-        }
+        //private void Form1_Resize(object sender, EventArgs e)
+        //{
+         //   dataGridView1.Width = this.Width - 20;
+            // dataGridView1.Height = this.Height - (this.Height/20);
+         //   dataGridView1.Height = this.Height;
+       // }
 
         private void multipleCSVsToolStripMenuItem_Click(object sender, EventArgs e)
         {

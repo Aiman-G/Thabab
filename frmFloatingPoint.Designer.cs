@@ -54,6 +54,7 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(279, 28);
             this.progressBar1.TabIndex = 14;
+            this.progressBar1.Visible = false;
             // 
             // btnSetPrecision
             // 
