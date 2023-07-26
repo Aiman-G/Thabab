@@ -18,6 +18,14 @@ desktop app for  for data processing  visualization
 
 ![image](https://github.com/Aiman-G/Thabab/assets/3510865/2e485369-6d2d-4efd-bd65-aef6d0573c58)
 
+![image](https://github.com/Aiman-G/Thabab/assets/3510865/17ede7bc-7549-4496-afb6-6e40ef0329fc)
+
+![image](https://github.com/Aiman-G/Thabab/assets/3510865/a32afa06-51e1-4636-adcb-5018594b60fa)
+
+
+
+
+
 
 
 
