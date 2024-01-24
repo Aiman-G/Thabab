@@ -7,6 +7,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Data;
+using CsvHelper;
+using CsvHelper.Configuration;
+
 
 using System.ComponentModel;
 
@@ -92,7 +95,8 @@ namespace Thabab
             }
         }
 
-        // populate a datagridview with csv, here read the file only and return a data table 
+        // populate a datagridview with csv, here read the file only and return a data table
+        // 
 
         public DataTable ReadCsvFile(string filePath)
         {
@@ -101,41 +105,22 @@ namespace Thabab
             try
             {
                 using (StreamReader sr = new StreamReader(filePath))
+                using (CsvReader csv = new CsvReader(sr, new CsvConfiguration(CultureInfo.InvariantCulture)))
                 {
-                    string headerLine = sr.ReadLine();
-                    if (headerLine == null)
-                    {
-                        throw new InvalidDataException("The selected file is empty.");
-                    }
+                    csv.Read();
+                    csv.ReadHeader();
 
-                    string[] headers = headerLine.Split(',');
-                    if (headers.Length == 0)
-                    {
-                        throw new InvalidDataException("The selected file does not have any columns.");
-                    }
-
-                    if (headers.Distinct().Count() != headers.Length)
-                    {
-                        throw new InvalidDataException("The selected file has duplicate column names.");
-                    }
-
-                    foreach (string header in headers)
+                    foreach (string header in csv.Context.Reader.HeaderRecord)
                     {
                         dt.Columns.Add(header);
                     }
 
-                    while (!sr.EndOfStream)
+                    while (csv.Read())
                     {
-                        string[] rows = sr.ReadLine().Split(',');
-                        if (rows.Length != headers.Length)
-                        {
-                            throw new InvalidDataException("The selected file has rows with different numbers of columns.");
-                        }
-
                         DataRow dr = dt.NewRow();
-                        for (int i = 0; i < headers.Length; i++)
+                        for (int i = 0; i < csv.Context.Reader.HeaderRecord.Length; i++)
                         {
-                            dr[i] = rows[i];
+                            dr[i] = csv.GetField(i);
                         }
                         dt.Rows.Add(dr);
                     }
@@ -150,6 +135,71 @@ namespace Thabab
             return dt;
         }
 
+
+
+
+
+        /*
+         public DataTable ReadCsvFile(string filePath)
+         {
+             DataTable dt = new DataTable();
+
+             try
+             {
+                 using (StreamReader sr = new StreamReader(filePath))
+                 {
+                     string headerLine = sr.ReadLine();
+                     if (headerLine == null)
+                     {
+                         throw new InvalidDataException("The selected file is empty.");
+                     }
+
+                     string[] headers = headerLine.Split(',');
+                     if (headers.Length == 0)
+                     {
+                         throw new InvalidDataException("The selected file does not have any columns.");
+                     }
+
+                     if (headers.Distinct().Count() != headers.Length)
+                     {
+                         throw new InvalidDataException("The selected file has duplicate column names.");
+                     }
+
+                     foreach (string header in headers)
+                     {
+                         dt.Columns.Add(header);
+                     }
+
+                     while (!sr.EndOfStream)
+                     {
+                         string[] rows = sr.ReadLine().Split(',');
+                         // Log the header and current row
+                         Console.WriteLine($"Header: {string.Join(",", headers)}");
+                         Console.WriteLine($"Current Row: {string.Join(",", rows)}");
+
+                         if (rows.Length != headers.Length)
+                         {
+                             throw new InvalidDataException("The selected file has rows with different number of columns.");
+                         }
+
+                         DataRow dr = dt.NewRow();
+                         for (int i = 0; i < headers.Length; i++)
+                         {
+                             dr[i] = rows[i];
+                         }
+                         dt.Rows.Add(dr);
+                     }
+                 }
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 return null; // or return an empty DataTable if desired
+             }
+
+             return dt;
+         }
+         */
 
 
         // -------- Getting disnict columns of multiple csv files -----------------------------------
